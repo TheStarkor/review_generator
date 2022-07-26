@@ -28,6 +28,13 @@ def save_result():
     print(params)
 
     return "OK"
+    
+@app.route('/complete', methods=["POST"])
+def complete():
+    params = request.get_json()
+    print(params)
+
+    return "OK"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=9090)

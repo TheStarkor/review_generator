@@ -6,32 +6,44 @@
 
 ### API
 
-1. quiz 불러오기  
-  GET `/quiz`
+1. GET `/start`: ID 받아오기 
+
+2. GET `/quiz`: quiz 불러오기  
   ```
-  {
-    reviewText: "Very loud and clear",
-    star: 5
-  }
+  [
+    {
+      reviewText: "Very loud and clear",
+      star: 5
+    }, 
+    {
+      reviewText: "okok",
+      star: 3
+    },
+    ...
+  ]
+  ```
+3. POST `/result`: quiz 제출
+  ```
+  body
+  [
+    {
+      userId: 123
+      reviewId: "",
+      consideration: "",
+      purchase: "",
+      shipping: "",
+      using: "",
+      cs: "",
+      none: ""
+    },
+    {
+      ...
+    },
+    ...
+  ]
   ```
 
-2. quiz 제출  
-  POST `/result`
-  ```
-  {
-    userId: 123
-    reviewId: "",
-    consideration: "",
-    purchase: "",
-    shipping: "",
-    using: "",
-    cs: "",
-    none: ""
-  }
-  ```
-  
-3. completion code  
-  POST `/complete`
+4. POST `/complete` completion code  
   ```
   {
     code: ""
