@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify, request
+import time
 
 app = Flask(__name__)
 
@@ -6,13 +7,20 @@ app = Flask(__name__)
 def status():
     return render_template("index.html")
 
+@app.route('/start')
+def start():
+    return str(int(time.time() * 100000))
+
 @app.route('/quiz')
 def get_quiz():
 
-    return jsonify({
+    return jsonify([{
         "id": 123,
         "text": "awesome",
-    })
+    }, {
+        "id": 345,
+        "text": "okok"
+    }])
 
 @app.route('/result', methods=["POST"])
 def save_result():
