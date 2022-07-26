@@ -43,6 +43,7 @@
 
 ### getting started
 `$ cd front`
+`$ npm install`
 `$ npm start`
 
 ### build
