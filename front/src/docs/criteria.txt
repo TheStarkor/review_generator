@@ -1,0 +1,55 @@
+1. Sentence : Got the earphones 3 days back.
+    
+    Consideration : X
+    
+    Purchase : X
+    
+    Shipping : O
+    
+    Using : X
+    
+    Customer Service : X
+    
+    None : X
+    
+2. Sentence : After a long research to get my BT Headset in the price rage of Rs.2000, I finally landed with this one.
+    
+    Consideration : O
+    
+    Purchase : O
+    
+    Shipping : X
+    
+    Using : X
+    
+    Customer Service : X
+    
+    None : X
+    
+3. Sentence : I would request sennheiser to work on thier product build quality as they r offerings great sound and warranty service
+    
+    Consideration : X
+    
+    Purchase : X
+    
+    Shipping : X
+    
+    Using : O
+    
+    Customer Service : O
+    
+    None : X
+    
+4. Sentence : This is one of the top ones.
+    
+    Consideration : X
+    
+    Purchase : X
+    
+    Shipping : X
+    
+    Using : X
+    
+    Customer Service : X
+    
+    None : O

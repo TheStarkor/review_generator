@@ -27,10 +27,12 @@ function App() {
   }
 
   const getQuestions = async () => {
+    // 25개 랜덤으로 받아야함
     const col = collection(firestore, 'questions');
     const citySnapshot = await getDocs(col);
     const cityList = citySnapshot.docs.map(doc => doc.data());
     
+    console.log(cityList);
     setQuesitons(cityList);
   }
 
@@ -40,9 +42,11 @@ function App() {
     // 반복문으로 결과 돌면서 결과 저장
     const resp = await addDoc(resultRef, {
       userId: userId,
-      result: {
+      result: [{
         cs: "ok"
-      }
+      }, {
+        cs: 'hihi'
+      }]
     });
 
     console.log(resp);
