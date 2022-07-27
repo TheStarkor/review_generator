@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { Link } from 'react-router-dom';
 
+
 const Intro = (props) => {
+	
 	return (
 		<>
 			<h2>Labeling Online Review Sentences based on the Customer Journey</h2>
