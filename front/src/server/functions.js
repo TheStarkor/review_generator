@@ -23,17 +23,13 @@ import { firestore } from '../firestore'
     return cityList;
   }
 
-  export const addItem = async (userId) => {
+  export const addItem = async (userId, answers) => {
     const resultRef = collection(firestore, "result");
 
     // 반복문으로 결과 돌면서 결과 저장
     const resp = await addDoc(resultRef, {
       userId: userId,
-      result: [{
-        cs: "ok"
-      }, {
-        cs: 'hihi'
-      }]
+      result: answers,
     });
 
     console.log(resp);

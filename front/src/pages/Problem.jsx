@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createUser, getQuestions } from '../server/functions';
+import { addItem, createUser, getQuestions } from '../server/functions';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Radio from '@mui/material/Radio';
@@ -21,7 +21,7 @@ const Problem = (props) => {
 	const [none, setNone] = useState(null);
 	const [result, setResult] = useState([]);
 
-	let navigate = useNavigate();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		createUser()
@@ -72,8 +72,38 @@ const Problem = (props) => {
 		setService(null);
 		setNone(null);
 		setCurrentNum(currentNum+1);
-
 	};
+	const submitAnswers = async () => {
+		if(!(consideration && purchase && shipping && using && service && none)){
+			alert("choose all options");
+			return;
+		}
+		const answer = {
+			text: questions[currentNum]?.reviewText,
+			star: questions[currentNum]?.star,
+			consideration: consideration,
+			purchase: purchase,
+			shipping: shipping,
+			using: using,
+			service: service,
+			none: none,
+		};
+		const answers = [...result, answer];
+		if(answers.length !== questions.length){
+			alert("Answer all questions");
+			return;
+		}
+		await addItem(userId, answers);
+		setResult(answers);
+		setConsideration(null);
+		setPurchase(null);
+		setShipping(null);
+		setUsing(null);
+		setService(null);
+		setNone(null);
+		alert("submit success");
+		navigate(`/completion`, { state: userId});
+	}
 
 	return (
 		<>
@@ -83,7 +113,7 @@ const Problem = (props) => {
 			<p>Star: {questions[currentNum]?.star}</p>
 			<p>Problem: {questions[currentNum]?.reviewText}</p>
 			<FormControl>
-      	<FormLabel id="row-radio-buttons-group-label">Consideration</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label">Consideration</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
@@ -91,8 +121,8 @@ const Problem = (props) => {
 					value={consideration}
 					onChange={(e)=>{setConsideration(e.target.value)}}
 				>
-					<FormControlLabel value="O" control={<Radio />} label="O" />
-					<FormControlLabel value="X" control={<Radio />} label="X" />
+					<FormControlLabel value="1" control={<Radio />} label="O" />
+					<FormControlLabel value="0" control={<Radio />} label="X" />
 				</RadioGroup>
 				<FormLabel id="row-radio-buttons-group-label">Purchase</FormLabel>
 				<RadioGroup
@@ -102,8 +132,8 @@ const Problem = (props) => {
 					value={purchase}
 					onChange={(e)=>{setPurchase(e.target.value)}}
 				>
-					<FormControlLabel value="O" control={<Radio />} label="O" />
-					<FormControlLabel value="X" control={<Radio />} label="X" />
+					<FormControlLabel value="1" control={<Radio />} label="O" />
+					<FormControlLabel value="0" control={<Radio />} label="X" />
 				</RadioGroup>
 				<FormLabel id="row-radio-buttons-group-label">Shipping</FormLabel>
 				<RadioGroup
@@ -113,8 +143,8 @@ const Problem = (props) => {
 					value={shipping}
 					onChange={(e)=>{setShipping(e.target.value)}}
 				>
-					<FormControlLabel value="O" control={<Radio />} label="O" />
-					<FormControlLabel value="X" control={<Radio />} label="X" />
+					<FormControlLabel value="1" control={<Radio />} label="O" />
+					<FormControlLabel value="0" control={<Radio />} label="X" />
 				</RadioGroup>
 				<FormLabel id="row-radio-buttons-group-label">Using</FormLabel>
 				<RadioGroup
@@ -124,8 +154,8 @@ const Problem = (props) => {
 					value={using}
 					onChange={(e)=>{setUsing(e.target.value)}}
 				>
-					<FormControlLabel value="O" control={<Radio />} label="O" />
-					<FormControlLabel value="X" control={<Radio />} label="X" />
+					<FormControlLabel value="1" control={<Radio />} label="O" />
+					<FormControlLabel value="0" control={<Radio />} label="X" />
 				</RadioGroup>
 				<FormLabel id="row-radio-buttons-group-label">Service</FormLabel>
 				<RadioGroup
@@ -135,8 +165,8 @@ const Problem = (props) => {
 					value={service}
 					onChange={(e)=>{setService(e.target.value)}}
 				>
-					<FormControlLabel value="O" control={<Radio />} label="O" />
-					<FormControlLabel value="X" control={<Radio />} label="X" />
+					<FormControlLabel value="1" control={<Radio />} label="O" />
+					<FormControlLabel value="0" control={<Radio />} label="X" />
 				</RadioGroup>
 				<FormLabel id="row-radio-buttons-group-label">None</FormLabel>
 				<RadioGroup
@@ -146,20 +176,18 @@ const Problem = (props) => {
 					value={none}
 					onChange={(e)=>{setNone(e.target.value)}}
 				>
-					<FormControlLabel value="O" control={<Radio />} label="O" />
-					<FormControlLabel value="X" control={<Radio />} label="X" />
+					<FormControlLabel value="1" control={<Radio />} label="O" />
+					<FormControlLabel value="0" control={<Radio />} label="X" />
 				</RadioGroup>
+				<Stack direction="row" spacing={2}>
+					<Button variant="outlined" onClick={getPrevProblem}>Previous</Button>
+					{
+						currentNum+1 !== questions?.length ?
+						<Button variant="outlined" onClick={getNextProblem}>Next</Button> :
+						<Button variant="contained" onClick={submitAnswers} >Submit</Button>
+					}
+				</Stack>
 			</FormControl>
-			
-
-			<Stack direction="row" spacing={2}>
-				<Button variant="outlined" onClick={getPrevProblem}>Previous</Button>
-				{
-					currentNum+1!=questions?.length ?
-					<Button variant="outlined" onClick={getNextProblem}>Next</Button> :
-					<Button variant="contained" >Submit</Button>
-				}
-			</Stack>
 		</>
 	);
 };

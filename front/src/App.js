@@ -5,6 +5,7 @@ import Intro from "./pages/Intro";
 import Sample from "./pages/Sample";
 import Sample2 from './pages/Sample2';
 import Problem from "./pages/Problem";
+import Completion from './pages/Completion';
 
 function App() {
 
@@ -15,13 +16,9 @@ function App() {
         <Route path="/sample" element={<Sample />} />
         <Route path="/sample2" element={<Sample2 />} />
         <Route path="/problem" element={<Problem />} />
+        <Route path="/completion" element={<Completion />} />
       </Routes>
     </Router>
-    // <div className="App">
-    //   안녕하세요
-    //   <button onClick={addItem}>hi</button>
-    //   <button onClick={() => complete('hihi')}>updateUser</button>
-    // </div>
   );
 }
 
