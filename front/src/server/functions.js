@@ -37,10 +37,15 @@ import { firestore } from '../firestore'
 
   export const complete = async (userId, code) => {
     const userDoc = doc(firestore, "users", userId);
+    const completionRef = collection(firestore, "completion");
 
     const resp = await updateDoc(userDoc, {
       code: code
     });
+    const resp2 = await addDoc(completionRef, {
+      userId: userId,
+      code: code
+    })
 
     console.log(resp);
   }

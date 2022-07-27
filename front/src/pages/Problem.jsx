@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addItem, createUser, getQuestions } from '../server/functions';
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import HomeIcon from '@mui/icons-material/Home';
 import Stack from '@mui/material/Stack';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -181,6 +183,9 @@ const Problem = (props) => {
 				</RadioGroup>
 				<Stack direction="row" spacing={2}>
 					<Button variant="outlined" onClick={getPrevProblem}>Previous</Button>
+					<IconButton color="primary" size="large" aria-label="home" onClick={()=>{navigate('/')}}>
+						<HomeIcon />
+					</IconButton>
 					{
 						currentNum+1 !== questions?.length ?
 						<Button variant="outlined" onClick={getNextProblem}>Next</Button> :

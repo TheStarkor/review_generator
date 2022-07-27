@@ -29,7 +29,7 @@ const Completion = (props) => {
 			<h3>Please enter completion code</h3>
       <p>{completionCode}</p>
       <Stack direction="column" spacing={2}>
-        <TextField id="outlined-basic" value={input} onChange={(e) => {setInput(e.target.value)}} variant="outlined" />
+        <TextField id="outlined-basic" variant="outlined" value={input} onChange={(e) => {setInput(e.target.value)}} />
         <Button variant="outlined" onClick={finishSurvey}>Finish</Button>
       </Stack>
 		</>
