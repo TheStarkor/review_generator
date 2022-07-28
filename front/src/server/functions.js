@@ -14,13 +14,30 @@ import { firestore } from '../firestore'
   }
 
   export const getQuestions = async () => {
-    // 25개 랜덤으로 받아야함
+    const questionCnt = 2; // 랜덤으로 받아 올 문제 수수
+
+    const createRandIndex = (count, length) => {
+      let randomIndexArray = []
+      for (let i=0; i<count; i++) {   //check if there is any duplicate index
+        let randomNum = Math.floor(Math.random() * length)
+        if (randomIndexArray.indexOf(randomNum) === -1) {
+          randomIndexArray.push(randomNum)
+        } else { //if the randomNum is already in the array retry
+          i--
+        }
+      }
+      return randomIndexArray
+    }
+
     const col = collection(firestore, 'questions');
-    const citySnapshot = await getDocs(col);
-    const cityList = citySnapshot.docs.map(doc => doc.data());
+    const questionSnapShot = await getDocs(col);
+    const questionLength = questionSnapShot.docs.length;
+    const indexArray = createRandIndex(questionCnt, questionLength);
+
+    const questionList = indexArray.map(idx => questionSnapShot.docs[idx].data());
     
-    console.log(cityList);
-    return cityList;
+    console.log(questionList);
+    return questionList;
   }
 
   export const addItem = async (userId, answers) => {
