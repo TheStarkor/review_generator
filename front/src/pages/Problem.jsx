@@ -10,6 +10,9 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import Tooltip from '@mui/material/Tooltip';
+import { Grid } from '@mui/material';
 
 const Problem = (props) => {
 	const [userId, setUserId] = useState(null);
@@ -109,11 +112,10 @@ const Problem = (props) => {
 
 	return (
 		<>
-			<h2>Labeling Task</h2>
-			<p><b>**Do not Refresh the page**</b></p>
-      <h3>Progress {currentNum+1}/{questions?.length}</h3>
-			<p>Star: {questions[currentNum]?.star}</p>
-			<p>Problem: {questions[currentNum]?.reviewText}</p>
+			<h1>Labeling Task</h1>
+			<p><b className="red">**Do not Refresh the page**</b></p>
+      <p>Progress {currentNum+1}/{questions?.length}</p>
+			<h3 className='labeling-text'> Text: {questions[currentNum]?.reviewText}</h3>
 			<FormControl>
 				<FormLabel id="row-radio-buttons-group-label">Consideration</FormLabel>
 				<RadioGroup
@@ -137,7 +139,21 @@ const Problem = (props) => {
 					<FormControlLabel value="1" control={<Radio />} label="O" />
 					<FormControlLabel value="0" control={<Radio />} label="X" />
 				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Shipping</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label">
+
+
+					<Grid
+						container
+						direction="row"
+						alignItems="center"
+					>
+						Shipping
+						<Tooltip title="Delete" placement="right-end">
+							<HelpOutlineIcon style={{paddingLeft:'5px'}}/>
+						</Tooltip>
+					</Grid>
+					
+				</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
@@ -159,7 +175,7 @@ const Problem = (props) => {
 					<FormControlLabel value="1" control={<Radio />} label="O" />
 					<FormControlLabel value="0" control={<Radio />} label="X" />
 				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Service</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label">Customer Service</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"

@@ -1,0 +1,70 @@
+
+h1 { 
+    line-height : 3rem;
+}
+.text-body{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height :2rem;
+}
+
+.text-box{
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+.button-group{
+    margin-top: 50px;
+}
+
+.explain ol{
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-top:60px;
+
+    font-weight: 600;    
+}
+
+.explain ul{
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+.explain ul li{
+    margin-bottom: 13px;
+}
+
+.explain ul ul{
+    font-weight: normal;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 7px;
+}
+
+
+
+
+.example ol li{
+    font-size: 1.17rem;
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+
+.example ol li li{
+    font-size : 1rem;
+    margin-bottom: 0px;
+}
+
+.labeling-text {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-size: 1.17rem;
+}
+
+.red {
+    color:red;
+}

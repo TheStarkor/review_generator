@@ -2,25 +2,33 @@ import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { Link } from 'react-router-dom';
+import './style.css';
 
 
 const Intro = (props) => {
 	
 	return (
 		<>
-			<h2>Labeling Online Review Sentences based on the Customer Journey</h2>
-			<p>Thank you for your help. <br/> In this survey, you will read 25 review sentences and label them based on the customer journey criteria.</p>
-			<p>The survey is separated into two steps.</p>
-			<ul>
-				<li>First, we will explain the labeling criteria and examples.</li>
-				<li>Second, then you will label 25 review sentences of a headset at Amazon.com</li>
-			</ul>
-			<Stack direction="row" spacing={2}>
-				<Button variant="disabled">Previous</Button>
-				<Link to="/sample">
-					<Button variant="outlined">Next</Button>
-				</Link>
-			</Stack>
+			<div className='text-box'>
+				<h1>Labeling Online Review Sentences <br></br>based on the Customer Journey</h1>
+				<p className='text-body'>Thank you for your help.</p>
+				<p className='text-body'>In this survey, you will read 25 review sentences and label them based on the customer journey criteria.</p>
+			</div>
+			<div className='text-box'>
+				<h2>The survey is separated into two steps.</h2>
+				<ul>
+					<li className='text-body'>First, we will explain the <b>labeling criteria and examples.</b></li>
+					<li className='text-body'>Second, then you will <b>label 25 review sentences of a headset at Amazon.com.</b></li>
+				</ul>
+			</div>
+			<div className='button-group'>
+				<Stack direction="row" spacing={2}>
+					<Button variant="disabled">Previous</Button>
+					<Link to="/sample">
+						<Button variant="outlined">Next</Button>
+					</Link>
+				</Stack>
+			</div>
 		</>
 	);
 };
