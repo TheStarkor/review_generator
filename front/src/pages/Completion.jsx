@@ -4,6 +4,8 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { complete } from '../server/functions';
+import { Link } from 'react-router-dom';
+
 
 const Completion = (props) => {
   const [input, setInput] = useState("");
@@ -19,7 +21,7 @@ const Completion = (props) => {
     }
     console.log("code", input);
     await complete(userId, input);
-    navigate(`/`);
+    navigate(`/finish`);
 
   }
 	
@@ -30,7 +32,7 @@ const Completion = (props) => {
       <p>{completionCode}</p>
       <Stack direction="column" spacing={2}>
         <TextField id="outlined-basic" variant="outlined" value={input} onChange={(e) => {setInput(e.target.value)}} />
-        <Button variant="outlined" onClick={finishSurvey}>Finish</Button>
+          <Button variant="outlined" onClick={finishSurvey}>Finish</Button>
       </Stack>
 		</>
 	);

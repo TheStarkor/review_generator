@@ -30,7 +30,7 @@ const Sample = (props) => {
       - Example Quotes : "The product came very worse packaged."
 4. Using : Opinions related to product usage
   - Product quality evaluation (sound quality, bass, charging, connection, ….)
-      - Example Quotes : "the sound quality is awesome but the built quality of the product is at very low level."
+      - Example Quotes : "The sound quality is awesome but the built quality of the product is at very low level."
   - Context of use.
       - Example Quotes : "I used it when exercising."
   - Ease of use
@@ -41,7 +41,7 @@ const Sample = (props) => {
   - Warranty service
       - Example Quotes : "The product is giving a two-year warranty."
   - Return
-      - Example Quotes : "product is returned
+      - Example Quotes : "Product is returned."
   - Refund / Replace
       - Example Quotes : "Hope to get it replaced at service centre."
   - Company’s communication about the product issue

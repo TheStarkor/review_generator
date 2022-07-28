@@ -6,6 +6,7 @@ import Sample from "./pages/Sample";
 import Sample2 from './pages/Sample2';
 import Problem from "./pages/Problem";
 import Completion from './pages/Completion';
+import Finish from './pages/Finish';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/sample2" element={<Sample2 />} />
           <Route path="/problem" element={<Problem />} />
           <Route path="/completion" element={<Completion />} />
+          <Route path="/finish" element={<Finish />} />
         </Routes>
       </Router>
   );

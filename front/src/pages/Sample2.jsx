@@ -82,7 +82,7 @@ const Sample2 = (props) => {
           Example 2 : After a research to headset in the price rage of Rs.2000, I finally landed with this one.
           </li>
           <FormControl>
-				<FormLabel id="row-radio-buttons-group-label">Consideration</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label"  style={{marginTop:"10px"}}>Consideration</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
@@ -91,7 +91,7 @@ const Sample2 = (props) => {
 					<FormControlLabel  checked="true" value="0" control={<Radio />} label="O" />
 					<FormControlLabel  disabled="true" value="1" control={<Radio />} label="X" />
 				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Purchase</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Purchase</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
@@ -100,7 +100,7 @@ const Sample2 = (props) => {
 					<FormControlLabel checked="true" value="1" control={<Radio />} label="O" />
 					<FormControlLabel disabled="true" value="0" control={<Radio />} label="X" />
 				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Shipping</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Shipping</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
@@ -109,7 +109,7 @@ const Sample2 = (props) => {
 					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
 					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
 				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Using</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Using</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
@@ -118,7 +118,7 @@ const Sample2 = (props) => {
 					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
 					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
 				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Customer Service</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Customer Service</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
@@ -127,7 +127,7 @@ const Sample2 = (props) => {
 					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
 					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
 				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">None</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>None</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
@@ -141,7 +141,7 @@ const Sample2 = (props) => {
           Example 3 : Headset offerings great sound and warranty service.
           </li>
           <FormControl>
-				<FormLabel id="row-radio-buttons-group-label">Consideration</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Consideration</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
@@ -150,7 +150,7 @@ const Sample2 = (props) => {
 					<FormControlLabel  disabled="true" value="0" control={<Radio />} label="O" />
 					<FormControlLabel  checked="true" value="1" control={<Radio />} label="X" />
 				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Purchase</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Purchase</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
@@ -159,7 +159,7 @@ const Sample2 = (props) => {
 					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
 					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
 				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Shipping</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label"  style={{marginTop:"10px"}}>Shipping</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
@@ -168,7 +168,7 @@ const Sample2 = (props) => {
 					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
 					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
 				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Using</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Using</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
@@ -177,7 +177,7 @@ const Sample2 = (props) => {
 					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
 					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
 				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Customer Service</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Customer Service</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
@@ -186,7 +186,7 @@ const Sample2 = (props) => {
 					<FormControlLabel checked="true" value="1" control={<Radio />} label="O" />
 					<FormControlLabel disabled="true" value="0" control={<Radio />} label="X" />
 				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">None</FormLabel>
+				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>None</FormLabel>
 				<RadioGroup
 					row
 					aria-labelledby="row-radio-buttons-group-label"
