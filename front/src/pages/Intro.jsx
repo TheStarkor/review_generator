@@ -3,9 +3,13 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { Link } from 'react-router-dom';
 import './style.css';
+import { getQuestions } from '../server/functions';
 
 
 const Intro = (props) => {
+	useEffect(() => {
+		getQuestions();
+	}, [])
 	
 	return (
 		<>
