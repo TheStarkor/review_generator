@@ -22,7 +22,6 @@ while(True):
     doc_ref = db.collection(u'questions').document(f'{str(idx-1).zfill(4)}')
     doc_ref.set({
         u'reviewText': load_ws[f'A{idx}'].value,
-        u'star': load_ws[f'B{idx}'].value
     })
 
     print(f'{idx-1} 완료!')
