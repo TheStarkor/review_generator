@@ -122,7 +122,8 @@ const Problem = (props) => {
 		setService(null);
 		setNone(null);
 		alert("submit success");
-		navigate(`/completion`, { state: userId});
+		console.log(questions[questions.length - 1])
+    navigate(`/completion`, { state: {userId: userId, task: questions[questions.length - 1]} });
 	}
 
 	return (
@@ -205,7 +206,7 @@ const Problem = (props) => {
 							className="bigButton"
 							type="radio" 
 							value="1"
-							checked={shipping == '1'}
+							checked={purchase == '1'}
 							onChange={(e)=>{setPurchase(e.target.value)}}
 							>
 							</input>
@@ -215,7 +216,7 @@ const Problem = (props) => {
 							className="bigButton"
 							type="radio" 
 							value="0"
-							checked={shipping == '0'}
+							checked={purchase == '0'}
 							onChange={(e)=>{setPurchase(e.target.value)}}
 							>
 							</input>
@@ -242,7 +243,7 @@ const Problem = (props) => {
 							className="bigButton"
 							type="radio" 
 							value="1"
-							checked={purchase == '1'}
+							checked={shipping == '1'}
 							onChange={(e)=>{setShipping(e.target.value)}}
 							>
 							</input>
@@ -252,7 +253,7 @@ const Problem = (props) => {
 							className="bigButton"
 							type="radio" 
 							value="0"
-							checked={purchase == '0'}
+							checked={shipping == '0'}
 							onChange={(e)=>{setShipping(e.target.value)}}
 							>
 							</input>
@@ -380,379 +381,6 @@ const Problem = (props) => {
 			</body>
 			</div>
 			<FormControl>
-				{/* <FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>
-				<Grid
-						container
-						direction="row"
-						alignItems="center"
-					>
-						Consideration
-						<HelpInfoTooltip 
-							placement="right-start"
-							title={
-								<React.Fragment>
-								  <Typography color="inherit">Opinions related to before purchase decision making</Typography>
-								  <p>{"Texpectation of the product"}</p>
-								  <li style={{fontStyle: "italic"}}>{"Example Quotes : Disappointed as I expected that it would last me for 6 months for the least."}</li>  
-								  <p>{"Reason for purchase decision making"}</p> 
-								  <li style={{fontStyle: "italic"}}>{"Example Quotes : I buy this product for my daughter’s present."}</li>  
-								  <p>{"Product search experience"}</p> 
-								  <li style={{fontStyle: "italic"}}>{"Example Quotes : After a long research, I finally choose this one."}</li>  
-								</React.Fragment>
-							}
-						>
-							<HelpOutlineIcon style={{paddingLeft:'5px'}}/>
-						</HelpInfoTooltip>
-
-					</Grid>						</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-					value={consideration}
-					onChange={(e)=>{setConsideration(e.target.value)}}
-				>
-					<FormControlLabel value="1" control={<Radio />} label="O" />
-					<FormControlLabel value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label"  style={{marginTop:"10px"}}>
-
-				<Grid
-						container
-						direction="row"
-						alignItems="center"
-					>
-						Purchase
-						<HelpInfoTooltip 
-							placement="right-start"
-							title={
-								<React.Fragment>
-								  <Typography color="inherit">Opinions related to purchases on the platform</Typography>
-								  <p>{"Thoughts and opinions about price"}</p>
-								  <li style={{fontStyle: "italic"}}>{"Example Quotes : I spend at least 1600 rs for this product and really unsatisfied."}</li>  
-								  <p>{"Package condition"}</p> 
-								  <li style={{fontStyle: "italic"}}>{"Example Quotes : I kept trying, but Amazon's payment system didn't work."}</li>  
-								</React.Fragment>
-							}
-						>
-							<HelpOutlineIcon style={{paddingLeft:'5px'}}/>
-						</HelpInfoTooltip>
-
-					</Grid>						</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-					value={purchase}
-					onChange={(e)=>{setPurchase(e.target.value)}}
-				>
-					<FormControlLabel value="1" control={<Radio />} label="O" />
-					<FormControlLabel value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    createUser().then((userId) => {
-      console.log("userId", userId);
-      setUserId(userId);
-    });
-    getQuestions().then((questions) => {
-      console.log("questions", questions);
-      setQuestions(questions);
-    });
-  }, []);
-
-  const getPrevProblem = async () => {
-    console.log("prev problem");
-    if (currentNum > 0) {
-      setCurrentNum(currentNum - 1);
-    } else {
-      navigate(-1);
-    }
-  };
-  const getNextProblem = async () => {
-    if (!(consideration && purchase && shipping && using && service && none)) {
-      alert("choose all options");
-      return;
-    }
-    console.log("next problem");
-    const answer = {
-      text: questions[currentNum]?.reviewText,
-      star: questions[currentNum]?.star,
-      consideration: consideration,
-      purchase: purchase,
-      shipping: shipping,
-      using: using,
-      service: service,
-      none: none,
-    };
-    console.log(result);
-    console.log(answer);
-    setResult([...result, answer]);
-    setConsideration(null);
-    setPurchase(null);
-    setShipping(null);
-    setUsing(null);
-    setService(null);
-    setNone(null);
-    setCurrentNum(currentNum + 1);
-  };
-  const submitAnswers = async () => {
-    if (!(consideration && purchase && shipping && using && service && none)) {
-      alert("choose all options");
-      return;
-    }
-    const answer = {
-      text: questions[currentNum]?.reviewText,
-      star: questions[currentNum]?.star,
-      consideration: consideration,
-      purchase: purchase,
-      shipping: shipping,
-      using: using,
-      service: service,
-      none: none,
-    };
-    const answers = [...result, answer];
-    if (answers.length !== questions.length) {
-      alert("Answer all questions");
-      return;
-    }
-    await addItem(userId, answers);
-    setResult(answers);
-    setConsideration(null);
-    setPurchase(null);
-    setShipping(null);
-    setUsing(null);
-    setService(null);
-    setNone(null);
-    alert("submit success");
-		console.log(questions[questions.length - 1])
-    navigate(`/completion`, { state: {userId: userId, task: questions[questions.length - 1]} });
-  };
-
-  return (
-    <>
-      <h1>Labeling Task</h1>
-      <p>
-        <b className="red">**Do not Refresh the page**</b>
-      </p>
-      {questions !== [] && (
-        <>
-          <p>
-            Progress {currentNum + 1}/{questions?.length}
-          </p>
-          <p className="labeling-text">
-            Please read the text below and match it to the corresponding
-            customer journey.
-            <h3> Text: {questions[currentNum]?.reviewText}</h3>
-          </p>
-          <FormControl>
-            <FormLabel
-              id="row-radio-buttons-group-label"
-              style={{ marginTop: "10px" }}
-            >
-              <Grid container direction="row" alignItems="center">
-                Consideration
-                <HelpInfoTooltip
-                  placement="right-start"
-                  title={
-                    <React.Fragment>
-                      <Typography color="inherit">
-                        Opinions related to before purchase decision making
-                      </Typography>
-                      <p>{"Texpectation of the product"}</p>
-                      <li style={{ fontStyle: "italic" }}>
-                        {
-                          "Example Quotes : Disappointed as I expected that it would last me for 6 months for the least."
-                        }
-                      </li>
-                      <p>{"Reason for purchase decision making"}</p>
-                      <li style={{ fontStyle: "italic" }}>
-                        {
-                          "Example Quotes : I buy this product for my daughter’s present."
-                        }
-                      </li>
-                      <p>{"Product search experience"}</p>
-                      <li style={{ fontStyle: "italic" }}>
-                        {
-                          "Example Quotes : After a long research, I finally choose this one."
-                        }
-                      </li>
-                    </React.Fragment>
-                  }
-                >
-                  <HelpOutlineIcon style={{ paddingLeft: "5px" }} />
-                </HelpInfoTooltip>
-              </Grid>{" "}
-            </FormLabel>
-            <RadioGroup
-              row
-              aria-labelledby="row-radio-buttons-group-label"
-              name="row-radio-buttons-group"
-              value={consideration}
-              onChange={(e) => {
-                setConsideration(e.target.value);
-              }}
-            >
-              <FormControlLabel value="1" control={<Radio />} label="O" />
-              <FormControlLabel value="0" control={<Radio />} label="X" />
-            </RadioGroup>
-            <FormLabel
-              id="row-radio-buttons-group-label"
-              style={{ marginTop: "10px" }}
-            >
-              <Grid container direction="row" alignItems="center">
-                Purchase
-                <HelpInfoTooltip
-                  placement="right-start"
-                  title={
-                    <React.Fragment>
-                      <Typography color="inherit">
-                        Opinions related to purchases on the platform
-                      </Typography>
-                      <p>{"Thoughts and opinions about price"}</p>
-                      <li style={{ fontStyle: "italic" }}>
-                        {
-                          "Example Quotes : I spend at least 1600 rs for this product and really unsatisfied."
-                        }
-                      </li>
-                      <p>{"Package condition"}</p>
-                      <li style={{ fontStyle: "italic" }}>
-                        {
-                          "Example Quotes : I kept trying, but Amazon's payment system didn't work."
-                        }
-                      </li>
-                    </React.Fragment>
-                  }
-                >
-                  <HelpOutlineIcon style={{ paddingLeft: "5px" }} />
-                </HelpInfoTooltip>
-              </Grid>{" "}
-            </FormLabel>
-            <RadioGroup
-              row
-              aria-labelledby="row-radio-buttons-group-label"
-              name="row-radio-buttons-group"
-              value={purchase}
-              onChange={(e) => {
-                setPurchase(e.target.value);
-              }}
-            >
-              <FormControlLabel value="1" control={<Radio />} label="O" />
-              <FormControlLabel value="0" control={<Radio />} label="X" />
-            </RadioGroup>
-
-            <FormLabel
-              id="row-radio-buttons-group-label"
-              style={{ marginTop: "10px" }}
-            >
-              <Grid container direction="row" alignItems="center">
-                Shipping
-                <HelpInfoTooltip
-                  placement="right-start"
-                  title={
-                    <React.Fragment>
-                      <Typography color="inherit">
-                        Opinions related to product shipping
-                      </Typography>
-                      <p>{"Thoughts and opinions about delivery time"}</p>
-                      <li style={{ fontStyle: "italic" }}>
-                        {"Quotes : Got the earphones 3 days early."}
-                      </li>
-                      <p>{"Package condition"}</p>
-                      <li style={{ fontStyle: "italic" }}>
-                        {"Quotes : The product came very worse packaged."}
-                      </li>
-                    </React.Fragment>
-                  }
-                >
-                  <HelpOutlineIcon style={{ paddingLeft: "5px" }} />
-                </HelpInfoTooltip>
-              </Grid>
-            </FormLabel>
-            <RadioGroup
-              row
-              aria-labelledby="row-radio-buttons-group-label"
-              name="row-radio-buttons-group"
-              value={shipping}
-              onChange={(e) => {
-                setShipping(e.target.value);
-              }}
-            >
-              <FormControlLabel value="1" control={<Radio />} label="O" />
-              <FormControlLabel value="0" control={<Radio />} label="X" />
-            </RadioGroup>
-
-            <FormLabel
-              id="row-radio-buttons-group-label"
-              style={{ marginTop: "10px" }}
-            >
-              <Grid container direction="row" alignItems="center">
-                Using
-                <HelpInfoTooltip
-                  placement="right-start"
-                  title={
-                    <React.Fragment>
-                      <Typography color="inherit">
-                        Opinions related to product usage
-                      </Typography>
-                      <p>
-                        {
-                          "Product quality evaluation (sound quality, bass, charging, connection, ….)"
-                        }
-                      </p>
-                      <li style={{ fontStyle: "italic" }}>
-                        {
-                          "Example Quotes : The sound quality is awesome but the built quality of the product is at very low level."
-                        }
-                      </li>
-                      <p>{"Context of use"}</p>
-                      <li style={{ fontStyle: "italic" }}>
-                        {"Example Quotes : I used it when exercising."}
-                      </li>
-                      <p>{"Ease of use"}</p>
-                      <li style={{ fontStyle: "italic" }}>
-                        {
-                          "Example Quotes : The earphones kept coming out of my ears."
-                        }
-                      </li>
-                      <p>{"Frequency of use"}</p>
-                      <li style={{ fontStyle: "italic" }}>
-                        {"Example Quotes : I use the product 2-3 times a week."}
-                      </li>
-                    </React.Fragment>
-                  }
-                >
-                  <HelpOutlineIcon style={{ paddingLeft: "5px" }} />
-                </HelpInfoTooltip>
-              </Grid>{" "}
-            </FormLabel>
-            <RadioGroup
-              row
-              aria-labelledby="row-radio-buttons-group-label"
-              name="row-radio-buttons-group"
-              value={using}
-              onChange={(e) => {
-                setUsing(e.target.value);
-              }}
-            >
-              <FormControlLabel value="1" control={<Radio />} label="O" />
-              <FormControlLabel value="0" control={<Radio />} label="X" />
-            </RadioGroup>
-
-						</Grid>						
-					</FormLabel> }
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-					value={none}
-					onChange={(e)=>{setNone(e.target.value)}}
-				>
-					<FormControlLabel value="1" control={<Radio />} label="O" />
-					<FormControlLabel value="0" control={<Radio />} label="X" />
-							</RadioGroup>*/}
 				<Stack direction="row" spacing={2}  style={{marginTop:"40px"}}>
 					<Button variant="outlined" onClick={getPrevProblem}>Previous</Button>
 					{/* <IconButton color="primary" size="large" aria-label="home" onClick={()=>{navigate('/')}}>
@@ -768,9 +396,7 @@ const Problem = (props) => {
                 </Button>
               )}
             </Stack>
-          </FormControl>
-        </>
-      )}
+				</FormControl>
     </>
   );
 };
