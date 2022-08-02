@@ -2,6 +2,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 from openpyxl import load_workbook
+import requests
 
 # Use a service account
 cred = credentials.Certificate('./key.json')
@@ -18,15 +19,16 @@ while(True):
     if (load_ws[f'A{idx}'].value == None):
         break
 
-    doc_ref = db.collection(u'valid').document(f'{str(idx-1).zfill(4)}')
-    doc_ref.set({
+    data = {
         u'reviewText': load_ws[f'A{idx}'].value,
         u'consideration': load_ws[f'B{idx}'].value,
         u'purchase': load_ws[f'C{idx}'].value,
         u'shipping': load_ws[f'D{idx}'].value,
         u'using': load_ws[f'E{idx}'].value,
         u'cs': load_ws[f'F{idx}'].value,
-    })
+        u'none': load_ws[f'G{idx}'].value
+    }
+    res = requests.post('https://api.onebob.co/questions/valid', data=data).json()
 
     print(f'{idx-1} 완료!')
     idx += 1
