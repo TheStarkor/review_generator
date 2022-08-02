@@ -6,14 +6,13 @@ import { getFirestore } from 'firebase/firestore/lite';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA-8wfaWr1FRxtsl6y_x_-hMzyWhD-TqDY",
-  authDomain: "review-generator-98bb9.firebaseapp.com",
-  projectId: "review-generator-98bb9",
-  storageBucket: "review-generator-98bb9.appspot.com",
-  messagingSenderId: "176083074957",
-  appId: "1:176083074957:web:192485c5d80659ea7bc7c4"
+  apiKey: "AIzaSyAVN0HghGFTimlRLdIjMMrxNnyLVtvZnjo",
+  authDomain: "review-production.firebaseapp.com",
+  projectId: "review-production",
+  storageBucket: "review-production.appspot.com",
+  messagingSenderId: "762485479370",
+  appId: "1:762485479370:web:0403ca191bf882c181a133"
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);

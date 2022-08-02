@@ -7,12 +7,12 @@ import { complete } from '../server/functions';
 import { Link } from 'react-router-dom';
 
 
-const Completion = (props) => {
+const Completion = ({ route }) => {
   const [input, setInput] = useState("");
   const completionCode = "AB2CD7";
   const navigate = useNavigate();
   const location = useLocation();
-  const userId = location.state;
+  const {userId, task} = location.state;
   const finishSurvey = async () => {
     if(input !== completionCode){
       alert("Incorrect Code");
@@ -20,7 +20,7 @@ const Completion = (props) => {
       return;
     }
     console.log("code", input);
-    await complete(userId, input);
+    complete(userId, input, task.task);
     navigate(`/finish`);
 
   }
