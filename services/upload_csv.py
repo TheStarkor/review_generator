@@ -27,7 +27,6 @@ while(True):
 
     res = requests.post('https://api.onebob.co/questions/question', data=data).json()
 
-    print(f'{idx-1} 완료!')
     idx += 1
 
 print("완료되었습니다.")

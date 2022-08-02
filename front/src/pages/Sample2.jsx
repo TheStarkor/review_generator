@@ -18,244 +18,557 @@ const Sample2 = (props) => {
 			<h1>Labeling Criteria and Examples</h1>
       <h2>Here are labeling examples.</h2>
       <div className='example'>
-			<ol>
+			<ul>
+			<h2>&nbsp;</h2>
         <li>
-          Example 1 : Got the earphones 3 days back.
+		<h2 style={{fontWeight: "normal"}}>Example 1: Got the earphones 3 days back.</h2>
         </li>
-          <FormControl>
-				<FormLabel id="row-radio-buttons-group-label">Consideration</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel  disabled="true" value="0" control={<Radio />} label="O" />
-					<FormControlLabel  checked="true" value="1" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Purchase</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Shipping</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel checked="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel disabled="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Using</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Customer Service</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">None</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-			</FormControl> 
+		<table>
+					<th></th>
+					<th style={{fontWeight: "normal"}}>True</th>
+					<th style={{fontWeight: "normal"}}>False</th>
+					<tr>
+						<td><b>
+							Consideration
+						</b></td>
+						<td>
+							<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+							<input 
+							className="bigButton"
+							type="radio" 
+							value="0"							
+							checked="checked"							
+						>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Purchase
+
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							checked="checked"	
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Shipping
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							checked="checked"							
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Using
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio"  
+							value="0"
+							checked="checked"							
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Customer Service
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio"
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							checked="checked"							
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>None
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"							
+							checked="checked"							
+							>
+							</input>
+						</td>
+					</tr>
+				</table> 
+				<h2>&nbsp;</h2>
         <li>
-          Example 2 : After a research to headset in the price rage of Rs.2000, I finally landed with this one.
+		<h2 style={{fontWeight: "normal"}}>Example 2:  After a long research to get my BT Headset in the price rage of Rs.2000, I finally landed with this one</h2>
           </li>
-          <FormControl>
-				<FormLabel id="row-radio-buttons-group-label"  style={{marginTop:"10px"}}>Consideration</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel  checked="true" value="0" control={<Radio />} label="O" />
-					<FormControlLabel  disabled="true" value="1" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Purchase</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel checked="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel disabled="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Shipping</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Using</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Customer Service</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>None</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-			</FormControl> 
-          <li>
-          Example 3 : Headset offerings great sound and warranty service.
+		  <table>
+					<th></th>
+					<th style={{fontWeight: "normal"}}>True</th>
+					<th style={{fontWeight: "normal"}}>False</th>
+					<tr>
+						<td><b>
+							Consideration
+						</b></td>
+						<td>
+							<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							checked="checked"							
+							>
+							</input>
+						</td>
+						<td>
+							<input 
+							className="bigButton"
+							type="radio" 
+							value="0"							
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Purchase
+
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							checked="checked"							
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Shipping
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							checked="checked"							
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Using
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio"  
+							value="0"
+							checked="checked"							
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Customer Service
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio"
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							checked="checked"							
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>None
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							checked="checked"														
+							>
+							</input>
+						</td>
+					</tr>
+				</table>
+				<h2>&nbsp;</h2>
+				
+				<li>
+		<h2 style={{fontWeight: "normal"}}>Example 3 : I returned the headset because of the poor sound quality.</h2>
           </li>
-          <FormControl>
-				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Consideration</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel  disabled="true" value="0" control={<Radio />} label="O" />
-					<FormControlLabel  checked="true" value="1" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Purchase</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label"  style={{marginTop:"10px"}}>Shipping</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Using</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>Customer Service</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel checked="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel disabled="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label" style={{marginTop:"10px"}}>None</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-			</FormControl> 
+		  <table>
+					<th></th>
+					<th style={{fontWeight: "normal"}}>True</th>
+					<th style={{fontWeight: "normal"}}>False</th>
+					<tr>
+						<td><b>
+							Consideration
+						</b></td>
+						<td>
+							<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+							<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							checked="checked"
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Purchase
+
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							checked="checked"							
+
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Shipping
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							checked="checked"							
+
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Using
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							checked="checked"							
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio"  
+							value="0"
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Customer Service
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio"
+							value="1"
+							checked="checked"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>None
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"							
+							checked="checked"
+							>
+							</input>
+						</td>
+					</tr>
+				</table>
+		<h2>&nbsp;</h2>
         <li>
-          Example 4 : This is one of the top ones.
+		<h2 style={{fontWeight: "normal"}}>Example 4 : This is one of the top ones.</h2>
           </li>
-          <FormControl>
-				<FormLabel id="row-radio-buttons-group-label">Consideration</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel  disabled="true" value="0" control={<Radio />} label="O" />
-					<FormControlLabel  checked="true" value="1" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Purchase</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Shipping</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Using</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">Customer Service</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel disabled="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel checked="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-				<FormLabel id="row-radio-buttons-group-label">None</FormLabel>
-				<RadioGroup
-					row
-					aria-labelledby="row-radio-buttons-group-label"
-					name="row-radio-buttons-group"
-				>
-					<FormControlLabel checked="true" value="1" control={<Radio />} label="O" />
-					<FormControlLabel disabled="true" value="0" control={<Radio />} label="X" />
-				</RadioGroup>
-			</FormControl> 
-      </ol>
+		  <table>
+					<th></th>
+					<th style={{fontWeight: "normal"}}>True</th>
+					<th style={{fontWeight: "normal"}}>False</th>
+					<tr>
+						<td><b>
+							Consideration
+						</b></td>
+						<td>
+							<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+							<input 
+							className="bigButton"
+							type="radio" 
+							value="0"							
+							checked="checked"
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Purchase
+
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							checked="checked"
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Shipping
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							checked="checked"
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Using
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio"  
+							value="0"
+							checked="checked"
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Customer Service
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio"
+							value="1"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"
+							checked="checked"
+							>
+							</input>
+						</td>
+					</tr>
+					<tr>
+						<td><b>None
+						</b></td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="1"
+							checked="checked"
+							>
+							</input>
+						</td>
+						<td>
+						<input 
+							className="bigButton"
+							type="radio" 
+							value="0"							>
+							</input>
+						</td>
+					</tr>
+				</table>      </ul>
       </div>
 			<Stack direction="row" spacing={2}>
         <Link to="/">
