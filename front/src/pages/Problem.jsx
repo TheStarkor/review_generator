@@ -131,11 +131,14 @@ const Problem = (props) => {
 			<p><b className="red">**Do not Refresh the page**</b></p>
       <p>Progress {currentNum+1}/{questions?.length}</p>
 	  <p className='labeling-text'>
+	  Please wait a few seconds for the text to appear  
+	  </p>
+	  <p className='labeling-text'>
 	  Please read the text below and match it to the corresponding customer journey.
 	  </p>
 	  <p>
 		<hr></hr>
-		<h2 style={{fontWeight: "normal"}}> Text:&nbsp;{questions[currentNum]?.reviewText}</h2>
+		<h2 style={{fontWeight: "normal", lineHeight:"40px"}}> Text:&nbsp;{questions[currentNum]?.reviewText}</h2>
 	</p>
 		<hr></hr>
 			<div className="container">
@@ -205,7 +208,7 @@ const Problem = (props) => {
 							className="bigButton"
 							type="radio" 
 							value="1"
-							checked={shipping == '1'}
+							checked={purchase == '1'}
 							onChange={(e)=>{setPurchase(e.target.value)}}
 							>
 							</input>
@@ -215,7 +218,7 @@ const Problem = (props) => {
 							className="bigButton"
 							type="radio" 
 							value="0"
-							checked={shipping == '0'}
+							checked={purchase == '0'}
 							onChange={(e)=>{setPurchase(e.target.value)}}
 							>
 							</input>
@@ -242,7 +245,7 @@ const Problem = (props) => {
 							className="bigButton"
 							type="radio" 
 							value="1"
-							checked={purchase == '1'}
+							checked={shipping == '1'}
 							onChange={(e)=>{setShipping(e.target.value)}}
 							>
 							</input>
@@ -252,7 +255,7 @@ const Problem = (props) => {
 							className="bigButton"
 							type="radio" 
 							value="0"
-							checked={purchase == '0'}
+							checked={shipping == '0'}
 							onChange={(e)=>{setShipping(e.target.value)}}
 							>
 							</input>
@@ -770,9 +773,7 @@ const Problem = (props) => {
             </Stack>
           </FormControl>
         </>
-      )}
-    </>
-  );
+  	);
 };
 
 export default Problem;
