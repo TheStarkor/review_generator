@@ -17,54 +17,42 @@ h1 {
     margin-top: 50px;
 }
 
-.explain ol{
-    display: block;
-    font-size: 1.17em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    margin-top:60px;
 
-    font-weight: 600;    
+.container {
+    display: flex;
 }
 
-.explain ul{
-    font-weight: normal;
-    margin-top: 0px;
-    margin-bottom: 40px;
-}
-.explain ul li{
-    margin-bottom: 13px;
+.explain{
+    margin-top:0;
 }
 
-.explain ul ul{
-    font-weight: normal;
+.quotes {
+
     font-style: italic;
-    margin-top: 10px;
-    margin-bottom: 7px;
 }
 
-
-
-
-.example ol li{
-    font-size: 1.17rem;
-    margin-top: 70px;
-    margin-bottom: 10px;
+table {
+    border-collapse:separate;
+    border-spacing: 10px 15px;
+ 
+}
+td{
+    height: 30px;
+}
+tr{
+    height: 30px;
 }
 
-.example ol li li{
-    font-size : 1rem;
-    margin-bottom: 0px;
+.bigButton{
+    height: 30px;
+    width: 20px;
+    border:1px;
 }
 
-.labeling-text {
-    margin-top: 60px;
-    margin-bottom: 30px;
-    font-size: 1.17rem;
+.helptext{
+    padding-bottom:15px;
 }
-
-.red {
-    color:red;
-}
+image: {
+    flex: 1;
+    justifyContent: "center";
+  }

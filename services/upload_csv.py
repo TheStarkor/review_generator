@@ -24,7 +24,6 @@ while(True):
         u'reviewText': load_ws[f'A{idx}'].value,
     })
 
-    print(f'{idx-1} 완료!')
     idx += 1
 
 print("완료되었습니다.")

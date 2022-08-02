@@ -26,6 +26,7 @@ while(True):
         u'shipping': load_ws[f'D{idx}'].value,
         u'using': load_ws[f'E{idx}'].value,
         u'cs': load_ws[f'F{idx}'].value,
+        u'none': load_ws[f'G{idx}'].value,
     })
 
     print(f'{idx-1} 완료!')
