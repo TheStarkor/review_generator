@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Completion = ({ route }) => {
   const [input, setInput] = useState("");
-  const completionCode = "AB2CD7";
+  const completionCode = "C6OPEITM";
   const navigate = useNavigate();
   const location = useLocation();
   const {userId, task} = location.state;
@@ -22,6 +22,7 @@ const Completion = ({ route }) => {
     console.log("code", input);
     complete(userId, input, task.task);
     navigate(`/finish`);
+    window.location.replace('https://app.prolific.co/submissions/complete?cc=C6OPEITM');
 
   }
 	
