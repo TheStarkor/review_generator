@@ -20,10 +20,9 @@ const Completion = ({ route }) => {
       return;
     }
     console.log("code", input);
-    complete(userId, input, task.task);
-    navigate(`/finish`);
+    await complete(userId, input, task.task);
     window.location.replace('https://app.prolific.co/submissions/complete?cc=C6OPEITM');
-
+    navigate(`/finish`);
   }
 	
 	return (
