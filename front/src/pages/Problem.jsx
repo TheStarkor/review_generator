@@ -38,7 +38,6 @@ const Problem = (props) => {
   const [shipping, setShipping] = useState(null);
   const [using, setUsing] = useState(null);
   const [service, setService] = useState(null);
-  const [none, setNone] = useState(null);
   const [result, setResult] = useState([]);
 
   const navigate = useNavigate();
@@ -63,7 +62,7 @@ const Problem = (props) => {
     }
   };
   const getNextProblem = async () => {
-    if (!(consideration && purchase && shipping && using && service && none)) {
+    if (!(consideration && purchase && shipping && using && service )) {
       alert("choose all options");
       return;
     }
@@ -76,7 +75,6 @@ const Problem = (props) => {
       shipping: shipping,
       using: using,
       service: service,
-      none: none,
     };
     console.log(result);
     console.log(answer);
@@ -86,11 +84,10 @@ const Problem = (props) => {
     setShipping(null);
     setUsing(null);
     setService(null);
-    setNone(null);
     setCurrentNum(currentNum + 1);
   };
   const submitAnswers = async () => {
-    if (!(consideration && purchase && shipping && using && service && none)) {
+    if (!(consideration && purchase && shipping && using && service )) {
       alert("choose all options");
       return;
     }
@@ -102,7 +99,6 @@ const Problem = (props) => {
       shipping: shipping,
       using: using,
       service: service,
-      none: none,
     };
     const answers = [...result, answer];
     if (answers.length !== questions.length) {
@@ -116,7 +112,6 @@ const Problem = (props) => {
     setShipping(null);
     setUsing(null);
     setService(null);
-    setNone(null);
     alert("submit success");
     console.log(questions[questions.length - 1]);
     navigate(`/completion`, {
@@ -144,7 +139,7 @@ const Problem = (props) => {
         <hr></hr>
         <h2 style={{ fontWeight: "normal", lineHeight: "40px" }}>
           {" "}
-          Text:&nbsp;{questions[currentNum]?.reviewText}
+          Sentence:<br />{questions[currentNum]?.reviewText}
         </h2>
       </p>
       <hr></hr>
@@ -152,8 +147,8 @@ const Problem = (props) => {
         <body>
           <table>
             <th></th>
-            <th style={{ fontWeight: "normal" }}>True</th>
-            <th style={{ fontWeight: "normal" }}>False</th>
+			<th style={{fontWeight: "normal"}}>Yes</th>
+					<th style={{fontWeight: "normal"}}>No</th>
             <tr>
               <td>
                 <b>
@@ -475,47 +470,7 @@ const Problem = (props) => {
                 ></input>
               </td>
             </tr>
-            <tr>
-              <td>
-                <b>
-                  None
-                  <HelpInfoTooltip
-                    placement="right-start"
-                    title={
-                      <React.Fragment>
-                        <p>None of the above</p>
-                      </React.Fragment>
-                    }
-                  >
-                    <HelpCenterIcon
-                      style={{ paddingLeft: "5px", color: "grey" }}
-                    />
-                  </HelpInfoTooltip>
-                </b>
-              </td>
-              <td>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="1"
-                  checked={none == "1"}
-                  onChange={(e) => {
-                    setNone(e.target.value);
-                  }}
-                ></input>
-              </td>
-              <td>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="0"
-                  checked={none == "0"}
-                  onChange={(e) => {
-                    setNone(e.target.value);
-                  }}
-                ></input>
-              </td>
-            </tr>
+
           </table>
         </body>
       </div>

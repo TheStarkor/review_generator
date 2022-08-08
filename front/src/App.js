@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Intro from "./pages/Intro";
 import Sample from "./pages/Sample";
 import Sample2 from './pages/Sample2';
+import Tutorial from './pages/Tutorial';
 import Problem from "./pages/Problem";
 import Completion from './pages/Completion';
 import Finish from './pages/Finish';
@@ -20,6 +21,7 @@ function App() {
           <Route path="/problem" element={<Problem />} />
           <Route path="/completion" element={<Completion />} />
           <Route path="/finish" element={<Finish />} />
+          <Route path="/tutorial" element={<Tutorial />} />
         </Routes>
       </Router>
   );
