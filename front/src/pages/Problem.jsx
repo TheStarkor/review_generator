@@ -17,6 +17,13 @@ import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 import HelpCenterIcon from "@mui/icons-material/HelpCenter";
 
+import Consideration from "./HelpInfoToolTip/Consideration"
+import Purchase from "./HelpInfoToolTip/Purchase"
+import Shipping from "./HelpInfoToolTip/Shipping"
+import Using from "./HelpInfoToolTip/Using"
+import CustomerService from "./HelpInfoToolTip/CustomerService"
+
+
 const HelpInfoTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
@@ -147,49 +154,25 @@ const Problem = (props) => {
         <body>
           <table>
             <th></th>
-			<th style={{fontWeight: "normal"}}>Yes</th>
-					<th style={{fontWeight: "normal"}}>No</th>
+            <th style={{fontWeight: "normal", width:"60px"}}>Very<br/>likely</th>
+      			<th style={{fontWeight: "normal", width:"60px"}}>Somewhat<br/>likely</th>
+			      <th style={{fontWeight: "normal", width:"60px"}}>Not<br/>likely</th>
             <tr>
               <td>
-                <b>
-                  Consideration
-                  <HelpInfoTooltip
-                    placement="right-start"
-                    title={
-                      <React.Fragment>
-                        <p>{"The expectation of the product"}</p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {
-                            "Disappointed as I expected that it would last me for 6 months for the least."
-                          }
-                        </li>
-                        <p>{"Reason for purchase decision making"}</p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {"I buy this product for my daughter’s present."}
-                        </li>
-                        <p>{"Product search experience"}</p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {"After a long research, I finally choose this one."}
-                        </li>
-                      </React.Fragment>
-                    }
-                  >
-                    <HelpCenterIcon
-                      style={{ paddingLeft: "5px", color: "grey" }}
-                    />
-                  </HelpInfoTooltip>
-                </b>
+                <Consideration/>
               </td>
-              <td>
+              <td style={{textAlign: "center"}}>
+                <input
+                  className="bigButton"
+                  type="radio"
+                  value="2"
+                  checked={consideration == "2"}
+                  onChange={(e) => {
+                    setConsideration(e.target.value);
+                  }}
+                ></input>
+              </td>
+              <td style={{textAlign: "center"}}>
                 <input
                   className="bigButton"
                   type="radio"
@@ -200,7 +183,7 @@ const Problem = (props) => {
                   }}
                 ></input>
               </td>
-              <td>
+              <td style={{textAlign: "center"}}>
                 <input
                   className="bigButton"
                   type="radio"
@@ -214,40 +197,20 @@ const Problem = (props) => {
             </tr>
             <tr>
               <td>
-                <b>
-                  Purchase
-                  <HelpInfoTooltip
-                    placement="right-start"
-                    title={
-                      <React.Fragment>
-                        <p>{"Thoughts and opinions about price"}</p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {
-                            "I spend at least 1600 rs for this product and really unsatisfied."
-                          }
-                        </li>
-                        <p>{"Package condition"}</p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {
-                            "I kept trying, but Amazon's payment system didn't work."
-                          }
-                        </li>
-                      </React.Fragment>
-                    }
-                  >
-                    <HelpCenterIcon
-                      style={{ paddingLeft: "5px", color: "grey" }}
-                    />
-                  </HelpInfoTooltip>
-                </b>
+                  <Purchase/>
               </td>
-              <td>
+              <td style={{textAlign: "center"}}>
+                <input
+                  className="bigButton"
+                  type="radio"
+                  value="2"
+                  checked={consideration == "2"}
+                  onChange={(e) => {
+                    setPurchase(e.target.value);
+                  }}
+                ></input>
+              </td>
+              <td style={{textAlign: "center"}}>
                 <input
                   className="bigButton"
                   type="radio"
@@ -258,7 +221,7 @@ const Problem = (props) => {
                   }}
                 ></input>
               </td>
-              <td>
+              <td style={{textAlign: "center"}}>
                 <input
                   className="bigButton"
                   type="radio"
@@ -272,36 +235,20 @@ const Problem = (props) => {
             </tr>
             <tr>
               <td>
-                <b>
-                  Shipping
-                  <HelpInfoTooltip
-                    placement="right-start"
-                    title={
-                      <React.Fragment>
-                        <p>{"Thoughts and opinions about delivery time"}</p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {"Got the earphones 3 days early."}
-                        </li>
-                        <p>{"Package condition"}</p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {"The product came very worse packaged."}
-                        </li>
-                      </React.Fragment>
-                    }
-                  >
-                    <HelpCenterIcon
-                      style={{ paddingLeft: "5px", color: "grey" }}
-                    />
-                  </HelpInfoTooltip>
-                </b>
+                <Shipping/>
               </td>
-              <td>
+              <td style={{textAlign: "center"}}>
+                <input
+                  className="bigButton"
+                  type="radio"
+                  value="2"
+                  checked={consideration == "2"}
+                  onChange={(e) => {
+                    setShipping(e.target.value);
+                  }}
+                ></input>
+              </td>
+              <td style={{textAlign: "center"}}>
                 <input
                   className="bigButton"
                   type="radio"
@@ -312,7 +259,7 @@ const Problem = (props) => {
                   }}
                 ></input>
               </td>
-              <td>
+              <td style={{textAlign: "center"}}>
                 <input
                   className="bigButton"
                   type="radio"
@@ -326,56 +273,20 @@ const Problem = (props) => {
             </tr>
             <tr>
               <td>
-                <b>
-                  Using
-                  <HelpInfoTooltip
-                    placement="right-start"
-                    title={
-                      <React.Fragment>
-                        <p>
-                          {
-                            "Product quality evaluation (sound quality, bass, charging, connection, ….)"
-                          }
-                        </p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {
-                            "The sound quality is awesome but the built quality of the product is at very low level."
-                          }
-                        </li>
-                        <p>{"Context of use"}</p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {"I used it when exercising."}
-                        </li>
-                        <p>{"Ease of use / Troubles"}</p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {"The earphones kept coming out of my ears."}
-                        </li>
-                        <p>{"Frequency of use"}</p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {"I use the product 2-3 times a week."}
-                        </li>
-                      </React.Fragment>
-                    }
-                  >
-                    <HelpCenterIcon
-                      style={{ paddingLeft: "5px", color: "grey" }}
-                    />
-                  </HelpInfoTooltip>
-                </b>
+                  <Using/>
               </td>
-              <td>
+              <td style={{textAlign: "center"}}>
+                <input
+                  className="bigButton"
+                  type="radio"
+                  value="2"
+                  checked={consideration == "2"}
+                  onChange={(e) => {
+                    setUsing(e.target.value);
+                  }}
+                ></input>
+              </td>
+              <td style={{textAlign: "center"}}>
                 <input
                   className="bigButton"
                   type="radio"
@@ -386,7 +297,7 @@ const Problem = (props) => {
                   }}
                 ></input>
               </td>
-              <td>
+              <td style={{textAlign: "center"}}>
                 <input
                   className="bigButton"
                   type="radio"
@@ -400,54 +311,20 @@ const Problem = (props) => {
             </tr>
             <tr>
               <td>
-                <b>
-                  Customer Service
-                  <HelpInfoTooltip
-                    placement="right-start"
-                    title={
-                      <React.Fragment>
-                        <p>{"Warranty service"}</p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {"The product is giving a two-year warranty."}
-                        </li>
-                        <p>{"Return"}</p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {"Product is returned."}
-                        </li>
-                        <p>{"Refund / Replace"}</p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {"Hope to get it replaced at service centre."}
-                        </li>
-                        <p>
-                          {"Company’s communication about the product issue"}
-                        </p>
-                        <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
-                        >
-                          {
-                            "I've tried calling them but the always receive a 'network busy' error."
-                          }
-                        </li>
-                      </React.Fragment>
-                    }
-                  >
-                    <HelpCenterIcon
-                      style={{ paddingLeft: "5px", color: "grey" }}
-                    />
-                  </HelpInfoTooltip>
-                </b>
+                  <CustomerService/>
               </td>
-              <td>
+              <td style={{textAlign: "center"}}>
+                <input
+                  className="bigButton"
+                  type="radio"
+                  value="2"
+                  checked={consideration == "2"}
+                  onChange={(e) => {
+                    setService(e.target.value);
+                  }}
+                ></input>
+              </td>
+              <td style={{textAlign: "center"}}>
                 <input
                   className="bigButton"
                   type="radio"
@@ -458,7 +335,7 @@ const Problem = (props) => {
                   }}
                 ></input>
               </td>
-              <td>
+              <td style={{textAlign: "center"}}>
                 <input
                   className="bigButton"
                   type="radio"
