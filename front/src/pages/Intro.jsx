@@ -20,7 +20,7 @@ const Intro = (props) => {
 			<div className='text-box'>
 				<ul>
 					<li className='text-body'><h2 style={{fontWeight:"normal"}}>First, we explain what the <b>customer journey criteria are and how to label them</b></h2></li>
-					<li className='text-body'><h2 style={{fontWeight:"normal"}}>Second, you <b>solve 6 tutorial quizes</b></h2></li>
+					<li className='text-body'><h2 style={{fontWeight:"normal"}}>Second, you <b>solve 7 tutorial quizes</b></h2></li>
 					<li className='text-body'><h2 style={{fontWeight:"normal"}}>Third, you <b>label 26 review sentences of a few products</b></h2></li>
 				</ul>
 			</div>
