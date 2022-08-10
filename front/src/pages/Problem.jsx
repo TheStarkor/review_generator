@@ -71,6 +71,7 @@ const Problem = (props) => {
   };
   const getNextProblem = async () => {
     if (!(consideration && purchase && shipping && using && service )) {
+      console.log(consideration,purchase,shipping,using,service)
       alert("choose all options");
       return;
     }
@@ -170,7 +171,9 @@ const Problem = (props) => {
                                 
                                 onChange={() => { }}
                                 onClick={() => {
-                                    setConsideration(vi);
+                                    setConsideration(vi.toString());
+                                    console.log("consider is assigned")
+                                    console.log(consideration)
                                 }}
                             >{v}</button>                        
                     );
@@ -187,12 +190,18 @@ const Problem = (props) => {
                     return (
                         
                             <button
-                                className={(purchase == vi.toString())? "bigButton selected": "bigButton"}
+                                className={
+                                  (purchase == vi.toString())? "bigButton selected": "bigButton"
+                                }
                                 type="radio"
                                 
-                                onChange={() => { }}
+                                onChange={() => { 
+                                  
+                                }}
                                 onClick={() => {
-                                    setPurchase(vi);
+                                    setPurchase(vi.toString());
+                                    console.log("purchase is assigned")
+                                    console.log(purchase)
                                 }}
                             >{v}</button>                        
                     );
@@ -214,7 +223,9 @@ const Problem = (props) => {
                                 
                                 onChange={() => { }}
                                 onClick={() => {
-                                    setShipping(vi);
+                                    setShipping(vi.toString());
+                                    console.log("shipping is assigned")
+                                    console.log(shipping)
                                 }}
                             >{v}</button>                        
                     );
@@ -236,7 +247,9 @@ const Problem = (props) => {
                                 
                                 onChange={() => { }}
                                 onClick={() => {
-                                    setUsing(vi);
+                                    setUsing(vi.toString());
+                                    console.log("using is assigned")
+                                    console.log(using)
                                 }}
                             >{v}</button>                        
                     );
@@ -258,7 +271,9 @@ const Problem = (props) => {
                                 
                                 onChange={() => { }}
                                 onClick={() => {
-                                    setService(vi);
+                                    setService(vi.toString());
+                                    console.log("service is assigned")
+                                    console.log(service)
                                 }}
                             >{v}</button>                        
                     );
