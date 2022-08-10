@@ -43,12 +43,12 @@ const Purchase = (props) => {
                         </li>
                         <br/>
 
-                        <p style={{fontSize:'1rem'}}>{"Package condition"}</p>
+                        <p style={{fontSize:'1rem'}}>{"Experience related to payment methods"}</p>
                         <li
-                        style={{fontSize:'.8rem', fontStyle: "Experience related to payment methods" }}
+                        style={{fontSize:'.8rem', fontStyle: "italic" }}
                         >
                           {
-                            "The product came very worse packaged."
+                            "I kept trying, but Amazon's payment system didn't work."
                           }
                         </li>
                         <br/>
