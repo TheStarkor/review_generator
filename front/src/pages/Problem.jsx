@@ -22,7 +22,8 @@ import Purchase from "./HelpInfoToolTip/Purchase"
 import Shipping from "./HelpInfoToolTip/Shipping"
 import Using from "./HelpInfoToolTip/Using"
 import CustomerService from "./HelpInfoToolTip/CustomerService"
-
+import './Index.css';
+import './style.css';
 
 const HelpInfoTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -127,6 +128,7 @@ const Problem = (props) => {
   };
 
   return (
+    
     <>
       <h1>Labeling Task</h1>
       <p>
@@ -144,9 +146,9 @@ const Problem = (props) => {
       </p>
       <p>
         <hr></hr>
-        <h2 style={{ fontWeight: "normal", lineHeight: "40px" }}>
+        <h2 style={{ color:'#555', lineHeight: "40px"}} className="serif">
           {" "}
-          Sentence:<br />{questions[currentNum]?.reviewText}
+          {questions[currentNum]?.reviewText}
         </h2>
       </p>
       <hr></hr>
@@ -154,197 +156,114 @@ const Problem = (props) => {
         <body>
           <table>
             <th></th>
-            <th style={{fontWeight: "normal", width:"60px"}}>Very<br/>likely</th>
-      			<th style={{fontWeight: "normal", width:"60px"}}>Somewhat<br/>likely</th>
-			      <th style={{fontWeight: "normal", width:"60px"}}>Not<br/>likely</th>
             <tr>
               <td>
                 <Consideration/>
               </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="2"
-                  checked={consideration == "2"}
-                  onChange={(e) => {
-                    setConsideration(e.target.value);
-                  }}
-                ></input>
-              </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="1"
-                  checked={consideration == "1"}
-                  onChange={(e) => {
-                    setConsideration(e.target.value);
-                  }}
-                ></input>
-              </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="0"
-                  checked={consideration == "0"}
-                  onChange={(e) => {
-                    setConsideration(e.target.value);
-                  }}
-                ></input>
+              <td style={{ textAlign: "center", width: "300px" }}>
+                {["No", "Maybe", "Yes"].map((v,vi) => {
+                    return (
+                        
+                            <button
+                                className={(consideration == vi.toString())? "bigButton selected": "bigButton"}
+                                type="radio"
+                                
+                                onChange={() => { }}
+                                onClick={() => {
+                                    setConsideration(vi);
+                                }}
+                            >{v}</button>                        
+                    );
+                })
+                }
               </td>
             </tr>
             <tr>
               <td>
                   <Purchase/>
               </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="2"
-                  checked={consideration == "2"}
-                  onChange={(e) => {
-                    setPurchase(e.target.value);
-                  }}
-                ></input>
-              </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="1"
-                  checked={purchase == "1"}
-                  onChange={(e) => {
-                    setPurchase(e.target.value);
-                  }}
-                ></input>
-              </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="0"
-                  checked={purchase == "0"}
-                  onChange={(e) => {
-                    setPurchase(e.target.value);
-                  }}
-                ></input>
+              <td style={{ textAlign: "center", width: "300px" }}>
+                {["No", "Maybe", "Yes"].map((v,vi) => {
+                    return (
+                        
+                            <button
+                                className={(purchase == vi.toString())? "bigButton selected": "bigButton"}
+                                type="radio"
+                                
+                                onChange={() => { }}
+                                onClick={() => {
+                                    setPurchase(vi);
+                                }}
+                            >{v}</button>                        
+                    );
+                })
+                }
               </td>
             </tr>
             <tr>
               <td>
                 <Shipping/>
               </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="2"
-                  checked={consideration == "2"}
-                  onChange={(e) => {
-                    setShipping(e.target.value);
-                  }}
-                ></input>
-              </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="1"
-                  checked={shipping == "1"}
-                  onChange={(e) => {
-                    setShipping(e.target.value);
-                  }}
-                ></input>
-              </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="0"
-                  checked={shipping == "0"}
-                  onChange={(e) => {
-                    setShipping(e.target.value);
-                  }}
-                ></input>
+              <td style={{ textAlign: "center", width: "300px" }}>
+                {["No", "Maybe", "Yes"].map((v,vi) => {
+                    return (
+                        
+                            <button
+                                className={(shipping == vi.toString())? "bigButton selected": "bigButton"}
+                                type="radio"
+                                
+                                onChange={() => { }}
+                                onClick={() => {
+                                    setShipping(vi);
+                                }}
+                            >{v}</button>                        
+                    );
+                })
+                }
               </td>
             </tr>
             <tr>
               <td>
                   <Using/>
               </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="2"
-                  checked={consideration == "2"}
-                  onChange={(e) => {
-                    setUsing(e.target.value);
-                  }}
-                ></input>
-              </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="1"
-                  checked={using == "1"}
-                  onChange={(e) => {
-                    setUsing(e.target.value);
-                  }}
-                ></input>
-              </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="0"
-                  checked={using == "0"}
-                  onChange={(e) => {
-                    setUsing(e.target.value);
-                  }}
-                ></input>
+              <td style={{ textAlign: "center", width: "300px" }}>
+                {["No", "Maybe", "Yes"].map((v,vi) => {
+                    return (
+                        
+                            <button
+                                className={(using == vi.toString())? "bigButton selected": "bigButton"}
+                                type="radio"
+                                
+                                onChange={() => { }}
+                                onClick={() => {
+                                    setUsing(vi);
+                                }}
+                            >{v}</button>                        
+                    );
+                })
+                }
               </td>
             </tr>
             <tr>
               <td>
                   <CustomerService/>
               </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="2"
-                  checked={consideration == "2"}
-                  onChange={(e) => {
-                    setService(e.target.value);
-                  }}
-                ></input>
-              </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="1"
-                  checked={service == "1"}
-                  onChange={(e) => {
-                    setService(e.target.value);
-                  }}
-                ></input>
-              </td>
-              <td style={{textAlign: "center"}}>
-                <input
-                  className="bigButton"
-                  type="radio"
-                  value="0"
-                  checked={service == "0"}
-                  onChange={(e) => {
-                    setService(e.target.value);
-                  }}
-                ></input>
+              <td style={{ textAlign: "center", width: "300px" }}>
+                {["No", "Maybe", "Yes"].map((v,vi) => {
+                    return (
+                        
+                            <button
+                                className={(service == vi.toString())? "bigButton selected": "bigButton"}
+                                type="radio"
+                                
+                                onChange={() => { }}
+                                onClick={() => {
+                                    setService(vi);
+                                }}
+                            >{v}</button>                        
+                    );
+                })
+                }
               </td>
             </tr>
 
@@ -353,18 +272,18 @@ const Problem = (props) => {
       </div>
       <FormControl>
         <Stack direction="row" spacing={2} style={{ marginTop: "40px" }}>
-          <Button variant="outlined" onClick={getPrevProblem}>
+          <Button variant="outlined" onClick={getPrevProblem}  style={{ textDecoration: 'none'}}>
             Previous
           </Button>
           {/* <IconButton color="primary" size="large" aria-label="home" onClick={()=>{navigate('/')}}>
 						<HomeIcon />
 					</IconButton> */}
           {currentNum + 1 !== questions?.length ? (
-            <Button variant="outlined" onClick={getNextProblem}>
+            <Button variant="outlined" onClick={getNextProblem}  style={{ textDecoration: 'none'}}>
               Next
             </Button>
           ) : (
-            <Button variant="contained" onClick={submitAnswers}>
+            <Button variant="contained" onClick={submitAnswers}  style={{ textDecoration: 'none'}}>
               Submit
             </Button>
           )}

@@ -9,13 +9,14 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-
+import './Index.css';
+import './style.css';
 
 const Sample2 = (props) => {
 
 	return (
 		<>
-			<h1>1. Labeling Criteria and Examples</h1>
+			<h1>1.Labeling Criteria and Examples</h1>
       <h2>Here are labeling examples.</h2>
 	  <p style={{color:"red"}}><b>The following list gives more details with sample quotes from online product reviews.</b></p>
         <p style={{color:"red"}}><b>Please read them carefully before proceeding to the next page. You will be asked to determine which stage a review sentence belongs to.</b></p>
@@ -66,25 +67,7 @@ const Sample2 = (props) => {
             </div>
         </div>
         <hr></hr>
-        <div>
-            <h3>Stage 4. Using</h3>
-            <div className="container">
-                <p className="explain">e.g. Product quality evaluation (sound quality, bass, charging, connection, ….): &nbsp; </p>
-                <p className={"quotes explain"}> "The sound quality is awesome."</p>
-            </div>
-            <div className="container">
-                <p className="explain">e.g. Context of use: &nbsp; </p>
-                <p className={"quotes explain"}> "I used it when exercising."</p>
-            </div>
-            <div className="container">
-                <p className="explain">e.g. Ease of use / Troubles: &nbsp; </p>
-                <p className={"quotes explain"}> "The earphones kept coming out of my ears."</p>
-            </div>
-            <div className="container">
-                <p className="explain">e.g. Frequency of use: &nbsp; </p>
-                <p className={"quotes explain"}> "I use the product 2-3 times a week."</p>
-            </div>
-        </div>
+
         <hr></hr>
         <div>
             <h3>Stage 5. Customer Service</h3>

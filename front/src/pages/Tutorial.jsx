@@ -21,255 +21,258 @@ import HelpCenterIcon from "@mui/icons-material/HelpCenter";
 
 import TutorialQuestion from "./TutorialQuestion.jsx"
 
+import './style.css';
+import './Index.css';
+
 
 const Tutorial = (props) => {
     let questions = [
-        {
-            "question": "After a while, the headphone comes to uncomfortable.",
-            "feedback": {
-                "consideration": {
-                    "answerKey": "0",
-                    "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about consideration."
-                    }
-                },
-                "purchase": {
-                    "answerKey": "0",
-                    "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about purchase."
-                    }
-                },
-                "shipping": {
-                    "answerKey": "0",
-                    "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about shipping."
-                    }
-                },
-                "using": {
-                    "answerKey": "2",
-                    "messages": {
-                        "2": "Correct",
-                        "1": "Think again",
-                        "0": "Think again",
-                        "explain" : "The sentence is talking about experience while using the product."
-                    }
-                },
-                "service": {
-                    "answerKey": "0",
-                    "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about customer service."
-                    }
-                }
-            }
-        },
+        // {
+        //     "question": "After a while, the headphone comes to uncomfortable.",
+        //     "feedback": {
+        //         "consideration": {
+        //             "answerKey": "0",
+        //             "messages": {
+        //                 "2": "Incorrect: ",
+        //                 "1": "Incorrect: ",
+        //                 "0": "Correct: ",
+        //                 "explain": ""
+        //             }
+        //         },
+        //         "purchase": {
+        //             "answerKey": "0",
+        //             "messages": {
+        //                 "2": "Incorrect: ",
+        //                 "1": "Incorrect: ",
+        //                 "0": "Correct: ",
+        //                 "explain": ""
+        //             }
+        //         },
+        //         "shipping": {
+        //             "answerKey": "0",
+        //             "messages": {
+        //                 "2": "Incorrect: ",
+        //                 "1": "Incorrect: ",
+        //                 "0": "Correct: ",
+        //                 "explain": ""
+        //             }
+        //         },
+        //         "using": {
+        //             "answerKey": "2",
+        //             "messages": {
+        //                 "2": "Correct: ",
+        //                 "1": "Incorrect: ",
+        //                 "0": "Incorrect: ",
+        //                 "explain" : "The sentence is talking about experience while using the product."
+        //             }
+        //         },
+        //         "service": {
+        //             "answerKey": "0",
+        //             "messages": {
+        //                 "2": "Incorrect: ",
+        //                 "1": "Incorrect: ",
+        //                 "0": "Correct: ",
+        //                 "explain": ""
+        //             }
+        //         }
+        //     }
+        // },
         {
             "question": "As the headphone was uncomfortable, I asked the company to fix",
             "feedback": {
                 "consideration": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about consideration."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "purchase": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about purchase."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "shipping": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about shipping."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "using": {
                     "answerKey": "2",
                     "messages": {
-                        "2": "Correct!",
-                        "1": "Think again",
-                        "0": "Think again",
+                        "2": "Correct: ",
+                        "1": "Incorrect: ",
+                        "0": "Incorrect: ",
                         "explain" : "The setence is talking about problem of the product."
                     }
                 },
                 "service": {
                     "answerKey": "2",
                     "messages": {
-                        "2": "Correct!",
-                        "1": "Think again",
-                        "0": "Think again",
+                        "2": "Correct: ",
+                        "1": "Incorrect: ",
+                        "0": "Incorrect: ",
                         "explain" : "The sentence is talking problem solving experience."
                     }
                 }
             }
         },
         {
-            "question": "I replaced my headphone",
+            "question": "I refunded my headphone",
             "feedback": {
                 "consideration": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about consideration."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "purchase": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about purchase."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": "Refund is not the product purchase stage."
                     }
                 },
                 "shipping": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about shipping."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "using": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about using."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "service": {
                     "answerKey": "2",
                     "messages": {
-                        "2": "Correct!",
-                        "1": "Think again",
-                        "0": "Think again",
+                        "2": "Correct: ",
+                        "1": "Incorrect: ",
+                        "0": "Incorrect: ",
                         "explain" : "The sentence is talking abour product replace experience."
                     }
                 }
             }
         },
-        {
-            "question": "I bought it at a low price during the promotion",
-            "feedback": {
-                "consideration": {
-                    "answerKey": "0",
-                    "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about consideration."
-                    }
-                },
-                "purchase": {
-                    "answerKey": "2",
-                    "messages": {
-                        "2": "Correct!",
-                        "1": "Think again",
-                        "0": "Think again",
-                        "explain" : "The sentence is talking about customer's purchase experience"
-                    }
-                },
-                "shipping": {
-                    "answerKey": "0",
-                    "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about shipping."
-                    }
-                },
-                "using": {
-                    "answerKey": "0",
-                    "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about using."
-                    }
-                },
-                "service": {
-                    "answerKey": "0",
-                    "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about customer service."
-                    }
-                }
-            }
-        },
+        // {
+        //     "question": "I bought it at a low price during the promotion",
+        //     "feedback": {
+        //         "consideration": {
+        //             "answerKey": "0",
+        //             "messages": {
+        //                 "2": "Incorrect: ",
+        //                 "1": "Incorrect: ",
+        //                 "0": "Correct: ",
+        //                 "explain": ""
+        //             }
+        //         },
+        //         "purchase": {
+        //             "answerKey": "2",
+        //             "messages": {
+        //                 "2": "Correct: ",
+        //                 "1": "Incorrect: ",
+        //                 "0": "Incorrect: ",
+        //                 "explain" : "The sentence is talking about customer's purchase experience"
+        //             }
+        //         },
+        //         "shipping": {
+        //             "answerKey": "0",
+        //             "messages": {
+        //                 "2": "Incorrect: ",
+        //                 "1": "Incorrect: ",
+        //                 "0": "Correct: ",
+        //                 "explain": ""
+        //             }
+        //         },
+        //         "using": {
+        //             "answerKey": "0",
+        //             "messages": {
+        //                 "2": "Incorrect: ",
+        //                 "1": "Incorrect: ",
+        //                 "0": "Correct: ",
+        //                 "explain": ""
+        //             }
+        //         },
+        //         "service": {
+        //             "answerKey": "0",
+        //             "messages": {
+        //                 "2": "Incorrect: ",
+        //                 "1": "Incorrect: ",
+        //                 "0": "Correct: ",
+        //                 "explain": ""
+        //             }
+        //         }
+        //     }
+        // },
         {
             "question": "Will buy it again",
             "feedback": {
                 "consideration": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about consideration."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "purchase": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about user's previous purchase experience."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain" : "The sentence doesn't contain any information about user's previous purchase of the product."
                     }
                 },
                 "shipping": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about shipping."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "using": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about using."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "service": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about customer service."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 }
             }
@@ -280,46 +283,46 @@ const Tutorial = (props) => {
                 "consideration": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about consideration."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "purchase": {
-                    "answerKey": "2",
+                    "answerKey": "0",
                     "messages": {
-                        "2": "Correct!",
-                        "1": "Think again",
-                        "0": "Think again",
-                        "explain" : "The sentence is talking about the product's price."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "shipping": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about shipping."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "using": {
-                    "answerKey": "2",
+                    "answerKey": "0",
                     "messages": {
-                        "2": "Correct!",
-                        "1": "Think again",
-                        "0": "Think again",
-                        "explain" : "The sentence is talking abour product value after using."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "service": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about customer service."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 }
             }
@@ -330,46 +333,46 @@ const Tutorial = (props) => {
                 "consideration": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about consideration."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "purchase": {
                     "answerKey": "2",
                     "messages": {
-                        "2": "Correct!",
-                        "1": "Think again",
-                        "0": "Think again",
-                        "explain" : "The sentence is talking about the product's price."
+                        "2": "Correct: ",
+                        "1": "Incorrect: ",
+                        "0": "Incorrect: ",
+                        "explain": "Sentence is talking about the price of the product"
                     }
                 },
                 "shipping": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about shipping."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "using": {
                     "answerKey": "2",
                     "messages": {
-                        "2": "Correct!",
-                        "1": "Think again",
-                        "0": "Think again",
-                        "explain" : "The sentence is talking abour product value after using."
+                        "2": "Correct: ",
+                        "1": "Incorrect: ",
+                        "0": "Incorrect: ",
+                        "explain": ""
                     }
                 },
                 "service": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about customer service."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 }
             }
@@ -380,46 +383,46 @@ const Tutorial = (props) => {
                 "consideration": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",    
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",    
                         "explain" : "The sentence doesn't contain any information about consideration. It just compare with other products after using"
                     }
                 },
                 "purchase": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about purchase."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "shipping": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about shipping."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "using": {
                     "answerKey": "2",
                     "messages": {
-                        "2": "Correct!",
-                        "1": "Think again",
-                        "0": "Think again",
-                        "explain" : "The sentence is talking about product using experience."
+                        "2": "Correct: ",
+                        "1": "Incorrect: ",
+                        "0": "Incorrect: ",
+                        "explain": ""
                     }
                 },
                 "service": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about customer service."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 }
             }
@@ -430,46 +433,46 @@ const Tutorial = (props) => {
                 "consideration": {
                     "answerKey": "2",
                     "messages": {
-                        "2": "Correct!",
-                        "1": "Think again",
-                        "0": "Think again",
+                        "2": "Correct: ",
+                        "1": "Incorrect: ",
+                        "0": "Incorrect: ",
                         "explain" : "The sentence is talking about consideration experience. Which is reading review before purchase."
                     }
                 },
                 "purchase": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about purchase."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "shipping": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about shipping."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "using": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about using."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 },
                 "service": {
                     "answerKey": "0",
                     "messages": {
-                        "2": "Think again",
-                        "1": "Think again",
-                        "0": "Correct!",
-                        "explain" : "The sentence doesn't contain any information about customer service."
+                        "2": "Incorrect: ",
+                        "1": "Incorrect: ",
+                        "0": "Correct: ",
+                        "explain": ""
                     }
                 }
             }
@@ -487,17 +490,10 @@ const Tutorial = (props) => {
 
     return (
         <>
-            <h1>2. Labeling Tutorial</h1>
-            <h2>Here are sample questions.</h2>
-            <p><b style={{ color: "red" }}>After correctly answer all tutorial questions, you can go to next step.</b></p>
-            <hr></hr>
-            <br></br>
-            <p>Please read sentences from online reviews and match them to correct customer journey stage</p>
-            <ul>
-                <li><p>For each sentences, you have to select Yes/No for all stages</p></li>
-                <li><p>If you cannot remeber the meaning of stages, move your mouse on the <HelpCenterIcon style={{ marginTop: "0", paddingLeft: "0px", color: "grey" }} /> icon.
-         </p></li>
-            </ul>
+            <h1>2. Tutorial</h1>
+            <p>Read sentences below, and tell us whether they contain information of a specific customer journey stage.</p>
+            <p>Note that a single sentence could be associated with multiple or no stage.</p>
+            <p>If you cannot remeber the meaning of stages, hover your mouse over the <b style={{textDecoration:"underline"}}>customer journey stage name</b></p>
             <br></br>
             <hr></hr>
             <div className='example'>
@@ -512,12 +508,14 @@ const Tutorial = (props) => {
                     })}
                 </ul>
             </div>
+            <p><b>After correctly answer all tutorial questions, you can go to next step.</b></p>
+            <br/>
             <Stack direction="row" spacing={2}>
-                <Link to="/sample2">
+                <Link to="/sample"  style={{ textDecoration: 'none'}}>
                     <Button variant="outlined">Previous</Button>
                 </Link>
                 {_.every(evaluationResults, (r)=>{ return r; }) ? (
-                <Link to="/problem">
+                <Link to="/problem"  style={{ textDecoration: 'none'}}>
                     <Button variant="outlined">Next</Button>
                 </Link>
                 ) : (

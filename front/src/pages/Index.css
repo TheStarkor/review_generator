@@ -1,0 +1,14 @@
+.center_align{
+    min-width : 1250px;
+    max-width : 1250px; 
+    margin-left : 20%;
+    margin-right : 20%;
+    margin-top : 100px;
+}
+body {
+   font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+} 
+.serif {
+    font-family: “Times New Roman”, Times, serif;
+  }

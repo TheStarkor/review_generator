@@ -15,7 +15,7 @@ const HelpInfoTooltip = styled(({ className, ...props }: TooltipProps) => (
     [`& .${tooltipClasses.tooltip}`]: {
       backgroundColor: "#f5f5f9",
       color: "rgba(0, 0, 0, 0.87)",
-      maxWidth: 320,
+      maxWidth: 800,
       fontSize: theme.typography.pxToRem(12),
       border: "1px solid #dadde9",
     },
@@ -26,38 +26,44 @@ const Purchase = (props) => {
     return(
         <>
          <p style={{textAlign:"right"}}>This sentence include information about&nbsp;
-        <b>
-                  "Purchase"
+        {/* <b>
+                  "Purchase" */}
                   <HelpInfoTooltip
                     placement="right-start"
                     title={
                       <React.Fragment>
-                        <p>{"Thoughts and opinions about price"}</p>
+                        <p style={{fontSize:'1.2rem', fontWeight:'bold'}}>{"Purchase:"}</p>
+                        <p style={{fontSize:'1rem'}}>{"Thoughts and opinions about price"}</p>
                         <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
+                        style={{fontSize:'.8rem', fontStyle: "italic" }}
                         >
                           {
                             "I spend at least 1600 rs for this product and really unsatisfied."
                           }
                         </li>
-                        <p>{"Package condition"}</p>
+                        <br/>
+
+                        <p style={{fontSize:'1rem'}}>{"Package condition"}</p>
                         <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
+                        style={{fontSize:'.8rem', fontStyle: "Experience related to payment methods" }}
                         >
                           {
-                            "I kept trying, but Amazon's payment system didn't work."
+                            "The product came very worse packaged."
                           }
                         </li>
+                        <br/>
                       </React.Fragment>
                     }
                   >
-                    <HelpCenterIcon
+                <b style={{textDecoration:"underline"}}>
+                Purchase</b>
+                </HelpInfoTooltip>
+                </p>
+                    {/* <HelpCenterIcon
                       style={{ paddingLeft: "5px", color: "grey" }}
                     />
                   </HelpInfoTooltip>
-                </b></p>
+                </b></p> */}
         </>
     );
 };

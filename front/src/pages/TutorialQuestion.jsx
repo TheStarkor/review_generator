@@ -7,6 +7,8 @@ import Shipping from "./HelpInfoToolTip/Shipping"
 import Using from "./HelpInfoToolTip/Using"
 import CustomerService from "./HelpInfoToolTip/CustomerService"
 
+import './Index.css';
+import './style.css';
 
 function TutorialQuestion(props) {
     const [choices, setChoices] = useState({
@@ -61,31 +63,35 @@ function TutorialQuestion(props) {
                 <td>
                     {instructions[k]()}
                 </td>
-                {["2", "1", "0"].map(v => {
+                <td style={{ textAlign: "center", width: "300px" }}>
+                {["No", "Maybe", "Yes"].map((v,vi) => {
                     return (
-                        <td style={{ textAlign: "center" }} key={"td" + v}>
-                            <input
-                                className="bigButton"
+                        
+                            <button
+                                className={(choices[k] == vi.toString())? "bigButton selected": "bigButton"}
                                 type="radio"
-                                checked={
-                                    choices[k] == v
-                                }
+                                
                                 onChange={() => { }}
                                 onClick={() => {
-                                    handleChoice(k, v);
+                                    handleChoice(k, vi.toString());
                                 }}
-                            ></input>
-                        </td>
+                            >{v}</button>
+                        
                     );
                 })
                 }
+                </td>
                 <td className="feedback">
-                    <div  style={{color:"blue"}}>{feedback[k]["messages"][choices[k]]}</div>
-                    {(choices[k] == undefined) ? (
-                        <div></div>
-                        ) : (
-                        <div style={{maxWidth:"400px"}}>{feedback[k]["messages"]["explain"]}</div>
-                    )}             
+                    <div className='rowC'>
+                    <div>
+                        <span   style={{color:"red"}}>{feedback[k]["messages"][choices[k]]}</span>
+                        {(choices[k] == undefined) ? (
+                            ""
+                            ) : (
+                            feedback[k]["messages"]["explain"]
+                        )}
+                    </div>
+                    </div>
                 </td>
             </tr>
         )
@@ -93,28 +99,37 @@ function TutorialQuestion(props) {
 
     return (
         <>
-            <h2>&nbsp;</h2>
-            <li>
-                <h2 style={{ fontWeight: "normal" }}>Question {parseInt(props.number) + 1}.</h2>
-                <hr></hr>
-                <h2 style={{ fontWeight: "normal", lineHeight: "40px" }}>sentence:<br /> {props.qObj.question}</h2>
-                <hr></hr>
-            </li>
-            <table>
+            <br/>
+            <br/>
+            <h2 style={{}}> {parseInt(props.number) + 1}.</h2>
+            <hr></hr>
+            <h2 style={{ color:'#555', lineHeight: "40px"}} className="serif"> {props.qObj.question}</h2>
+            <hr></hr>
+            <table className="choiceTable">
                 <tbody>
-                    <tr>
+                    {/* <tr>
                         <th></th>
                         <th style={{ fontWeight: "normal", width: "60px" }}>Very<br />likely</th>
                         <th style={{ fontWeight: "normal", width: "60px" }}>Somewhat<br />likely</th>
                         <th style={{ fontWeight: "normal", width: "60px" }}>Not<br />likely</th>
-                    </tr>
+                    </tr> */}
                     {questions}
+                    <tr>
+                        <th></th>
+                        <th>
+                        <h3 style={{textAlign:'center'}}>
+                            <div style={{color:'red'}}>{(props.evaluationResult) ? "Good job": "Check answer again"}</div>
+                        </h3>
+                        </th>
+                    </tr>
                 </tbody>
             </table>
-            <h2>
-                Status : <div style={{color:'blue'}}>{(props.evaluationResult) ? "All Correct": "Not done yet"}</div>
-            </h2>
             <hr></hr>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
         </>
     );
 };

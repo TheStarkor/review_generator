@@ -15,7 +15,7 @@ const HelpInfoTooltip = styled(({ className, ...props }: TooltipProps) => (
     [`& .${tooltipClasses.tooltip}`]: {
       backgroundColor: "#f5f5f9",
       color: "rgba(0, 0, 0, 0.87)",
-      maxWidth: 320,
+      maxWidth: 800,
       fontSize: theme.typography.pxToRem(12),
       border: "1px solid #dadde9",
     },
@@ -26,43 +26,52 @@ const Consideration = (props) => {
     return(
         <> 
          <p style={{textAlign:"right"}}>This sentence include information about&nbsp;
-            <b>
-                "Consideration"
-                <HelpInfoTooltip
+            <HelpInfoTooltip
                 placement="right-start"
                 title={
                     <React.Fragment>
-                    <p>{"The expectation of the product"}</p>
-                    <li
-                        className="helptext"
-                        style={{ fontStyle: "italic" }}
+                    <p style={{fontSize:'1.2rem', fontWeight:'bold'}}>{"Consideration:"}</p>
+                    <p style={{fontSize:'1rem'}}>{"The expectation of the product"}</p>
+                    <li 
+                        style={{fontSize:'.8rem', fontStyle: "italic" }}
                     >
                         {
                         "Disappointed as I expected that it would last me for 6 months for the least."
                         }
                     </li>
-                    <p>{"Reason for purchase decision making"}</p>
+                    <br/>
+                    <p style={{fontSize:'1rem'}}>{"Reason for purchase decision making"}</p>
                     <li
-                        className="helptext"
-                        style={{ fontStyle: "italic" }}
+                        style={{fontSize:'.8rem',  fontStyle: "italic" }}
                     >
                         {"I buy this product for my daughter’s present."}
                     </li>
-                    <p>{"Product search experience"}</p>
+                    <br/>
+                    <p style={{fontSize:'1rem'}}>{"Product search experience"}</p>
                     <li
-                        className="helptext"
-                        style={{ fontStyle: "italic" }}
+                        style={{fontSize:'.8rem',  fontStyle: "italic" }}
                     >
                         {"After a long research, I finally choose this one."}
                     </li>
+                    <br/>
+                    <p style={{fontSize:'1rem'}}>{"Previous similar product usage experience"}</p>
+                    <li
+                        style={{fontSize:'.8rem',  fontStyle: "italic" }}
+                    >
+                        {"I've tried similar products from the same company before."}
+                    </li>
+                    <br/>
                     </React.Fragment>
                 }
                 >
-                <HelpCenterIcon
+                <b style={{textDecoration:"underline"}}>
+                Consideration</b>
+                </HelpInfoTooltip>
+                </p>
+                {/* <HelpCenterIcon
                     style={{ paddingLeft: "5px", color: "grey" }}
                 />
-                </HelpInfoTooltip>
-            </b></p>
+                </HelpInfoTooltip> */}
         </>
     );
 };

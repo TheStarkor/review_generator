@@ -15,7 +15,7 @@ const HelpInfoTooltip = styled(({ className, ...props }: TooltipProps) => (
     [`& .${tooltipClasses.tooltip}`]: {
       backgroundColor: "#f5f5f9",
       color: "rgba(0, 0, 0, 0.87)",
-      maxWidth: 320,
+      maxWidth: 800,
       fontSize: theme.typography.pxToRem(12),
       border: "1px solid #dadde9",
     },
@@ -26,52 +26,59 @@ const CustomerService = (props) => {
     return(
         <>
          <p style={{textAlign:"right"}}>This sentence include information about&nbsp;
-            <b>
-                  "Customer Service"
                   <HelpInfoTooltip
                     placement="right-start"
                     title={
                       <React.Fragment>
-                        <p>{"Warranty service"}</p>
+                        <p style={{fontSize:'1.2rem', fontWeight:'bold'}}>{"Customer Service:"}</p>
+                        <p style={{fontSize:'1rem'}}>{"Warranty service"}</p>
                         <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
+                        style={{fontSize:'.8rem', fontStyle: "italic" }}
                         >
                           {"The product is giving a two-year warranty."}
                         </li>
-                        <p>{"Return"}</p>
+                        <br/>
+                        
+                        <p style={{fontSize:'1rem'}}>{"Return"}</p>
                         <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
+                        style={{fontSize:'.8rem', fontStyle: "italic" }}
                         >
                           {"Product is returned."}
                         </li>
-                        <p>{"Refund / Replace"}</p>
+                        <br/>
+                        
+                        <p style={{fontSize:'1rem'}}>{"Refund / Replace / Repair"}</p>
                         <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
+                        style={{fontSize:'.8rem', fontStyle: "italic" }}
                         >
                           {"Hope to get it replaced at service centre."}
                         </li>
-                        <p>
+                        <br/>
+                        
+                        <p style={{fontSize:'1rem'}}>
                           {"Company’s communication about the product issue"}
                         </p>
                         <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
+                        style={{fontSize:'.8rem', fontStyle: "italic" }}
                         >
                           {
-                            "I've tried calling them but the always receive a 'network busy' error."
+                            "I've tried calling them but always receive a 'network busy'."
                           }
                         </li>
+                        <br/>
+                        
                       </React.Fragment>
                     }
                   >
-                    <HelpCenterIcon
+                <b style={{textDecoration:"underline"}}>
+                Customer Service</b>
+                </HelpInfoTooltip>
+                </p>
+                    {/* <HelpCenterIcon
                       style={{ paddingLeft: "5px", color: "grey" }}
                     />
                   </HelpInfoTooltip>
-                </b></p>
+                </b></p> */}
         </>
     );
 };

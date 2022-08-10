@@ -15,7 +15,7 @@ const HelpInfoTooltip = styled(({ className, ...props }: TooltipProps) => (
     [`& .${tooltipClasses.tooltip}`]: {
       backgroundColor: "#f5f5f9",
       color: "rgba(0, 0, 0, 0.87)",
-      maxWidth: 320,
+      maxWidth: 800,
       fontSize: theme.typography.pxToRem(12),
       border: "1px solid #dadde9",
     },
@@ -26,34 +26,38 @@ const Shipping = (props) => {
     return(
         <>
          <p  style={{textAlign:"right"}}>This sentence include information about&nbsp;
-            <b>
-                  "Shipping"
                   <HelpInfoTooltip
                     placement="right-start"
                     title={
                       <React.Fragment>
-                        <p>{"Thoughts and opinions about delivery time"}</p>
+                        <p style={{fontSize:'1.2rem', fontWeight:'bold'}}>{"Shipping:"}</p>
+                        <p  style={{fontSize:'1rem'}}>{"Thoughts and opinions about delivery time"}</p>
                         <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
+                        style={{fontSize:'.8rem', fontStyle: "italic" }}
                         >
                           {"Got the earphones 3 days early."}
                         </li>
-                        <p>{"Package condition"}</p>
+                        <br/>
+
+                        <p  style={{fontSize:'1rem'}}>{"Package condition"}</p>
                         <li
-                          className="helptext"
-                          style={{ fontStyle: "italic" }}
+                        style={{fontSize:'.8rem', fontStyle: "italic" }}
                         >
                           {"The product came very worse packaged."}
                         </li>
+                        <br/>
                       </React.Fragment>
                     }
                   >
-                    <HelpCenterIcon
+                <b style={{textDecoration:"underline"}}>
+                Shipping</b>
+                </HelpInfoTooltip>
+                </p>
+                    {/* <HelpCenterIcon
                       style={{ paddingLeft: "5px", color: "grey" }}
                     />
                   </HelpInfoTooltip>
-            </b></p>
+            </b></p> */}
         </>
     );
 };

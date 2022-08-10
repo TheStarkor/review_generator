@@ -1,3 +1,7 @@
+.serif{
+    font-family: “Times New Roman”, Times, serif;
+}
+
 
 h1 { 
     line-height : 3rem;
@@ -23,11 +27,12 @@ h1 {
 }
 
 .explain{
+    font-weight: bold;
     margin-top:0;
 }
 
 .quotes {
-
+    margin-top:0;
     font-style: italic;
 }
 
@@ -44,14 +49,39 @@ tr{
 }
 
 .bigButton{
+    display:inline-block;
     height: 30px;
-    width: 20px;
-    border:1px;
+    width: 80px;
+    border-radius:0px;
+    border:1px solid #aaa;    
+    background: #fff;
+    color:#888;
+    margin:-1px;
 }
+.bigButton:last-child {
+    border-radius:0 8px 8px 0;
+}
+.bigButton:first-child {
+    border-radius:8px 0 0 8px;
+ }
+ .bigButton.selected {
+    background: #666; 
+    color: white;
+ }
+/* .choiceTable {
+    margin:0; padding:0;
+    border-spacing:0;
+} */
 
 .helptext{
     padding-bottom:15px;
 }
 image {
     flex: 1;
+}
+
+.rowC{display:flex; flex-direction:row;}
+
+.feedback{
+    max-width: 400px;
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from 'react'
 
 import Intro from "./pages/Intro";
 import Sample from "./pages/Sample";
@@ -11,6 +12,9 @@ import Finish from './pages/Finish';
 
 
 function App() {
+  useEffect(()=>{
+    document.title = "Sentence Labeling"
+  });
 
   return (
       <Router>
