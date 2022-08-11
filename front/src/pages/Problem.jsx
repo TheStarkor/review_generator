@@ -62,7 +62,8 @@ const Problem = (props) => {
   }, []);
 
   const getPrevProblem = async () => {
-    console.log("prev problem");
+    console.log("prev problem",currentNum);
+    setResult(result.slice(0,-1));
     if (currentNum > 0) {
       setCurrentNum(currentNum - 1);
     } else {
@@ -71,11 +72,11 @@ const Problem = (props) => {
   };
   const getNextProblem = async () => {
     if (!(consideration && purchase && shipping && using && service )) {
-      console.log(consideration,purchase,shipping,using,service)
-      alert("choose all options");
-      return;
+       console.log(consideration,purchase,shipping,using,service)
+       alert("choose all options");
+       return;
     }
-    console.log("next problem");
+    console.log("next problem",currentNum);
     const answer = {
       text: questions[currentNum]?.reviewText,
       star: questions[currentNum]?.star,
@@ -96,10 +97,10 @@ const Problem = (props) => {
     setCurrentNum(currentNum + 1);
   };
   const submitAnswers = async () => {
-    if (!(consideration && purchase && shipping && using && service )) {
-      alert("choose all options");
-      return;
-    }
+    // if (!(consideration && purchase && shipping && using && service )) {
+    //   alert("choose all options");
+    //   return;
+    // }
     const answer = {
       text: questions[currentNum]?.reviewText,
       star: questions[currentNum]?.star,
@@ -131,12 +132,9 @@ const Problem = (props) => {
   return (
     
     <>
-      <h1>Labeling Task</h1>
+      <h1>3.Labeling Task</h1>
       <p>
         <b className="red">**Do not Refresh the page**</b>
-      </p>
-      <p>
-        Progress {currentNum + 1}/{questions?.length}
       </p>
       <p className="labeling-text">
         Please wait a few seconds for the text to appear
@@ -145,23 +143,30 @@ const Problem = (props) => {
         Please read the text below and match it to the corresponding customer
         journey.
       </p>
+      <br/>
+      <br/>
+      <br/>
       <p>
         <hr></hr>
+        <p style={{fontSize:".8rem"}}>
+        PROGRESS: {currentNum + 1}/{questions?.length}<br/>
+        </p>
+        <p style={{fontSize:".8rem", marginTop:"5px"}}>
+        SENTENCE:
+        </p>
         <h2 style={{ color:'#555', lineHeight: "40px"}} className="serif">
-          {" "}
-          {questions[currentNum]?.reviewText}
+          "{questions[currentNum]?.reviewText}"
         </h2>
+        <hr></hr>
       </p>
-      <hr></hr>
       <div className="container">
         <body>
           <table>
-            <th></th>
             <tr>
               <td>
                 <Consideration/>
               </td>
-              <td style={{ textAlign: "center", width: "300px" }}>
+              <td style={{ textAlign: "center", width: "300px" , marginBottom:"0"}}>
                 {["No", "Maybe", "Yes"].map((v,vi) => {
                     return (
                         

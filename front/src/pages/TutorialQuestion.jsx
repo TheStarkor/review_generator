@@ -103,7 +103,7 @@ function TutorialQuestion(props) {
             <br/>
             <h2 style={{}}> {parseInt(props.number) + 1}.</h2>
             <hr></hr>
-            <h2 style={{ color:'#555', lineHeight: "40px"}} className="serif"> {props.qObj.question}</h2>
+            <h2 style={{ color:'#555', lineHeight: "40px"}} className="serif"> "{props.qObj.question}"</h2>
             <hr></hr>
             <table className="choiceTable">
                 <tbody>
@@ -118,7 +118,7 @@ function TutorialQuestion(props) {
                         <th></th>
                         <th>
                         <h3 style={{textAlign:'center'}}>
-                            <div style={{color:'red'}}>{(props.evaluationResult) ? "Good job": "Check answer again"}</div>
+                            <div style={{color:'red'}}>{(props.evaluationResult) ? "Good job": "Please check your answer again"}</div>
                         </h3>
                         </th>
                     </tr>

@@ -85,3 +85,8 @@ image {
 .feedback{
     max-width: 400px;
 }
+
+
+table{
+    border-spacing:0px;
+}
