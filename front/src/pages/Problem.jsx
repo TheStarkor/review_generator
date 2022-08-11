@@ -64,6 +64,11 @@ const Problem = (props) => {
   const getPrevProblem = async () => {
     console.log("prev problem",currentNum);
     setResult(result.slice(0,-1));
+    setConsideration(null);
+    setPurchase(null);
+    setShipping(null);
+    setUsing(null);
+    setService(null);
     if (currentNum > 0) {
       setCurrentNum(currentNum - 1);
     } else {
