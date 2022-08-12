@@ -10,9 +10,11 @@ firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
-load_wb = load_workbook('./questions.xlsx', data_only=True)
+# 파일명 변경
+load_wb = load_workbook('./220810_question.xlsx', data_only=True)
 
-load_ws = load_wb['questions']
+# sheet1 이름 확인 후 변경
+load_ws = load_wb['Sheet1']
 
 idx = 2
 while(True):
@@ -27,6 +29,9 @@ while(True):
 
     res = requests.post('https://api.onebob.co/questions/question', data=data).json()
 
+    if (idx % 5000 == 1):
+        print(f"{idx}까지 완료!")
+        
     idx += 1
 
 print("완료되었습니다.")
